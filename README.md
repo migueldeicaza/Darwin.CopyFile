@@ -7,6 +7,10 @@ The Darwin `copyfile` API can copy files, their metadata, extended
 attributes, recursive directory and supports fast copies using
 cloning (for files hosted on APFS on macOS and iOS).
 
+You can use this as either a NuGet
+([Darwin.CopyFile](https://www.nuget.org/packages/Darwin.CopyFile)),
+or you can just copy the single C# file into your project.
+
 API Documentation
 =================
 
