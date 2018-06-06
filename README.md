@@ -7,6 +7,11 @@ The Darwin `copyfile` API can copy files, their metadata, extended
 attributes, recursive directory and supports fast copies using
 cloning (for files hosted on APFS on macOS and iOS).
 
+API Documentation
+=================
+
+You can browse the [API Documentation](https://migueldeicaza.github.io/Darwin.CopyFile/).
+
 Using the API
 =============
 
