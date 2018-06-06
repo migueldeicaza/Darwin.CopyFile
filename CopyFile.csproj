@@ -1,0 +1,13 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <PackageId>Darwin.CopyFile</PackageId>
+    <Version>1.0.0.0</Version>
+    <Authors>Miguel de Icaza</Authors>
+    <Company>Miguel de Icaza</Company>
+    <Title>Darwin.CopyFile provides a managed API to access macOS, tvOS and iOS's copyfile APIs</Title>
+    <Copyright>Miguel de Icaza, MIT Licesed</Copyright> 
+    <TargetFramework>netstandard1.5</TargetFramework>
+  </PropertyGroup>
+
+</Project>
