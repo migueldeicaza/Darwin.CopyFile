@@ -12,7 +12,8 @@
     <summary>
             Possible return values from the State callback method.
             </summary>
-    <remarks>To be added.</remarks>
+    <remarks>
+    </remarks>
   </Docs>
   <Members>
     <Member MemberName="Continue">

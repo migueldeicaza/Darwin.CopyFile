@@ -19,15 +19,21 @@
     <ReturnType>Darwin.CopyFile+NextStep</ReturnType>
   </ReturnValue>
   <Docs>
-    <param name="what">To be added.</param>
-    <param name="stage">To be added.</param>
-    <param name="source">To be added.</param>
-    <param name="dest">To be added.</param>
-    <param name="state">To be added.</param>
+    <param name="what">
+    </param>
+    <param name="stage">
+    </param>
+    <param name="source">
+    </param>
+    <param name="dest">
+    </param>
+    <param name="state">
+    </param>
     <summary>
               Signature for the method that will be invoked during a recursive copy operation.
             </summary>
-    <returns>To be added.</returns>
+    <returns>
+    </returns>
     <remarks>
               The fist parameter identifies the kind of progress being reported,
               the second parameter the state of that particular process, then

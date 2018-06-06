@@ -10,7 +10,7 @@ cloning (for files hosted on APFS on macOS and iOS).
 API Documentation
 =================
 
-You can browse the [API Documentation](https://migueldeicaza.github.io/Darwin.CopyFile/).
+You can browse the [API Documentation](https://migueldeicaza.github.io/Darwin.CopyFile/api/Darwin.html)
 
 Using the API
 =============

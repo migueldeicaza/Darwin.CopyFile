@@ -12,7 +12,8 @@
     <summary>
               Represents the state of the operation being reported to the callback
             </summary>
-    <remarks>To be added.</remarks>
+    <remarks>
+    </remarks>
   </Docs>
   <Members>
     <Member MemberName="Error">

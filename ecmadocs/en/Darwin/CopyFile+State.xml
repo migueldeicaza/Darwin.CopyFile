@@ -35,7 +35,8 @@
         <summary>
              Creates a new state object used to control the recursive copying operation
             </summary>
-        <remarks>To be added.</remarks>
+        <remarks>
+        </remarks>
       </Docs>
     </Member>
     <Member MemberName="Copied">
@@ -52,8 +53,10 @@
         <summary>
             The number of bytes copied so far
             </summary>
-        <value>To be added.</value>
-        <remarks>To be added.</remarks>
+        <value>
+        </value>
+        <remarks>
+        </remarks>
       </Docs>
     </Member>
     <Member MemberName="DestFD">
@@ -71,8 +74,10 @@
             Get or set the file descriptor associated with the destiation file.
             If this has not been initialized yet, the value will be -2.
             </summary>
-        <value>To be added.</value>
-        <remarks>To be added.</remarks>
+        <value>
+        </value>
+        <remarks>
+        </remarks>
       </Docs>
     </Member>
     <Member MemberName="DestinationFileName">
@@ -90,8 +95,10 @@
             Get or set the filename associated with the source, if this has not been
             initialized, the value will be null.
             </summary>
-        <value>To be added.</value>
-        <remarks>To be added.</remarks>
+        <value>
+        </value>
+        <remarks>
+        </remarks>
       </Docs>
     </Member>
     <Member MemberName="Dispose">
@@ -108,11 +115,13 @@
         <Parameter Name="disposing" Type="System.Boolean" />
       </Parameters>
       <Docs>
-        <param name="disposing">To be added.</param>
+        <param name="disposing">
+        </param>
         <summary>
              Disposes the object
             </summary>
-        <remarks>To be added.</remarks>
+        <remarks>
+        </remarks>
       </Docs>
     </Member>
     <Member MemberName="Finalize">
@@ -130,7 +139,8 @@
         <summary>
              Finalizer 
             </summary>
-        <remarks>To be added.</remarks>
+        <remarks>
+        </remarks>
       </Docs>
     </Member>
     <Member MemberName="SetStatusCallback">
@@ -147,12 +157,14 @@
         <Parameter Name="callback" Type="Darwin.CopyFile+State+ProgressCallback" />
       </Parameters>
       <Docs>
-        <param name="callback">To be added.</param>
+        <param name="callback">
+        </param>
         <summary>
             Sets a callback that is invoked during recursive copies and can allow you to
             monitor and control the copying process.
             </summary>
-        <remarks>To be added.</remarks>
+        <remarks>
+        </remarks>
       </Docs>
     </Member>
     <Member MemberName="SourceFD">
@@ -170,8 +182,10 @@
             Get or set the file descriptor associated with the source file.
             If this has not been initialized yet, the value will be -2.
             </summary>
-        <value>To be added.</value>
-        <remarks>To be added.</remarks>
+        <value>
+        </value>
+        <remarks>
+        </remarks>
       </Docs>
     </Member>
     <Member MemberName="SourceFileName">
@@ -189,8 +203,10 @@
             Get or set the filename associated with the source, if this has not been
             initialized, the value will be null.
             </summary>
-        <value>To be added.</value>
-        <remarks>To be added.</remarks>
+        <value>
+        </value>
+        <remarks>
+        </remarks>
       </Docs>
     </Member>
     <Member MemberName="System.IDisposable.Dispose">
@@ -205,8 +221,10 @@
       </ReturnValue>
       <Parameters />
       <Docs>
-        <summary>To be added.</summary>
-        <remarks>To be added.</remarks>
+        <summary>
+        </summary>
+        <remarks>
+        </remarks>
       </Docs>
     </Member>
     <Member MemberName="XAttrName">
@@ -223,8 +241,10 @@
         <summary>
             Retursn the name of the current extended attribute being copied
             </summary>
-        <value>To be added.</value>
-        <remarks>To be added.</remarks>
+        <value>
+        </value>
+        <remarks>
+        </remarks>
       </Docs>
     </Member>
   </Members>

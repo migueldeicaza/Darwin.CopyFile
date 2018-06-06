@@ -12,7 +12,8 @@
     <summary>
               Possible return values from perfoming the copy operation
             </summary>
-    <remarks>To be added.</remarks>
+    <remarks>
+    </remarks>
   </Docs>
   <Members>
     <Member MemberName="EACCESS">

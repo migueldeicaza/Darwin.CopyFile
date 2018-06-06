@@ -12,7 +12,8 @@
     <summary>
              Provides the progress of a recursive copy operation
             </summary>
-    <remarks>To be added.</remarks>
+    <remarks>
+    </remarks>
   </Docs>
   <Members>
     <Member MemberName="CopyData">
