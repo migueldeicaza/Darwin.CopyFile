@@ -1,0 +1,119 @@
+### YamlMime:ManagedReference
+items:
+- uid: Darwin.CopyFile
+  id: CopyFile
+  children:
+  - Darwin.CopyFile.#ctor
+  - Darwin.CopyFile.Copy(System.String,System.String,Darwin.CopyFile.Flags,Darwin.CopyFile.State)
+  langs:
+  - csharp
+  name: CopyFile
+  nameWithType: CopyFile
+  fullName: Darwin.CopyFile
+  type: Class
+  assemblies:
+  - CopyFile
+  namespace: Darwin
+  summary: >-
+    Surfaces the Darwin CopyFile API which can both copy individual files
+                as well as copying directory structures.
+  syntax:
+    content: public class CopyFile
+  inheritance:
+  - System.Object
+  implements: []
+  inheritedMembers: []
+- uid: Darwin.CopyFile.#ctor
+  id: '#ctor'
+  parent: Darwin.CopyFile
+  langs:
+  - csharp
+  name: CopyFile()
+  nameWithType: CopyFile.CopyFile()
+  fullName: CopyFile.CopyFile()
+  type: Constructor
+  assemblies:
+  - CopyFile
+  namespace: Darwin
+  syntax:
+    content: public CopyFile ();
+    parameters: []
+  overload: Darwin.CopyFile.#ctor*
+  exceptions: []
+- uid: Darwin.CopyFile.Copy(System.String,System.String,Darwin.CopyFile.Flags,Darwin.CopyFile.State)
+  id: Copy(System.String,System.String,Darwin.CopyFile.Flags,Darwin.CopyFile.State)
+  parent: Darwin.CopyFile
+  langs:
+  - csharp
+  name: Copy(String, String, CopyFile+Flags, CopyFile+State)
+  nameWithType: CopyFile.Copy(String, String, CopyFile+Flags, CopyFile+State)
+  fullName: CopyFile.Copy(String, String, CopyFile+Flags, CopyFile+State)
+  type: Method
+  assemblies:
+  - CopyFile
+  namespace: Darwin
+  summary: This function copies a file or directory to a destination.
+  remarks: "<p>\n                The copy operation can be configured using the flags parameter.\n              </p>\n    <p>\n                Use Flags.All to copy all the content, metadata and extended attributes.   \n              </p>\n    <p>\n                Use Flags.Recursive to perform a recursive copy.\n              </p>\n    <p>\n                Use Flags.Clone for using the clone fast copy mechanism available on APFS,\n                it automatically fallsback to simple copies.\n              </p>\n    <p>\n                To get control over the copy operation during recursive copies, you can provide a State object.\n              </p>"
+  syntax:
+    content: public static Darwin.CopyFile.Status Copy (string from, string to, Darwin.CopyFile.Flags flags, Darwin.CopyFile.State state = null);
+    parameters:
+    - id: from
+      type: System.String
+      description: To be added.
+    - id: to
+      type: System.String
+      description: To be added.
+    - id: flags
+      type: Darwin.CopyFile+Flags
+      description: To be added.
+    - id: state
+      type: Darwin.CopyFile+State
+      description: To be added.
+    return:
+      type: Darwin.CopyFile+Status
+      description: To be added.
+  overload: Darwin.CopyFile.Copy*
+  exceptions: []
+references:
+- uid: System.Object
+  parent: System
+  isExternal: true
+  name: Object
+  nameWithType: Object
+  fullName: System.Object
+- uid: Darwin.CopyFile.#ctor
+  parent: Darwin.CopyFile
+  isExternal: false
+  name: CopyFile()
+  nameWithType: CopyFile.CopyFile()
+  fullName: CopyFile.CopyFile()
+- uid: Darwin.CopyFile.Copy(System.String,System.String,Darwin.CopyFile.Flags,Darwin.CopyFile.State)
+  parent: Darwin.CopyFile
+  isExternal: false
+  name: Copy(String, String, CopyFile+Flags, CopyFile+State)
+  nameWithType: CopyFile.Copy(String, String, CopyFile+Flags, CopyFile+State)
+  fullName: CopyFile.Copy(String, String, CopyFile+Flags, CopyFile+State)
+- uid: Darwin.CopyFile
+  parent: Darwin
+  isExternal: false
+  name: CopyFile
+  nameWithType: CopyFile
+  fullName: Darwin.CopyFile+Status
+- uid: System.String
+  parent: System
+  isExternal: true
+  name: String
+  nameWithType: String
+  fullName: System.String
+- uid: Darwin.CopyFile.#ctor*
+  parent: Darwin.CopyFile
+  isExternal: false
+  name: CopyFile
+  nameWithType: CopyFile.CopyFile
+  fullName: CopyFile.CopyFile
+- uid: Darwin.CopyFile.Copy*
+  parent: Darwin.CopyFile
+  isExternal: false
+  name: Copy
+  nameWithType: CopyFile.Copy
+  fullName: CopyFile.Copy

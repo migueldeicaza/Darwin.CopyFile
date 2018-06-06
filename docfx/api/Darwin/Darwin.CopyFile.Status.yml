@@ -1,0 +1,247 @@
+### YamlMime:ManagedReference
+items:
+- uid: Darwin.CopyFile.Status
+  id: CopyFile.Status
+  children:
+  - Darwin.CopyFile.Status.EACCESS
+  - Darwin.CopyFile.Status.ECANCELED
+  - Darwin.CopyFile.Status.EEXISTS
+  - Darwin.CopyFile.Status.EINVAL
+  - Darwin.CopyFile.Status.ENOENT
+  - Darwin.CopyFile.Status.ENOTMEM
+  - Darwin.CopyFile.Status.ENOTSUP
+  - Darwin.CopyFile.Status.Ok
+  langs:
+  - csharp
+  name: CopyFile.Status
+  nameWithType: CopyFile.Status
+  fullName: Darwin.CopyFile.Status
+  type: Enum
+  assemblies:
+  - CopyFile
+  namespace: Darwin
+  summary: Possible return values from perfoming the copy operation
+  syntax:
+    content: public enum CopyFile.Status
+  inheritance:
+  - System.Enum
+- uid: Darwin.CopyFile.Status.EACCESS
+  id: EACCESS
+  parent: Darwin.CopyFile.Status
+  langs:
+  - csharp
+  name: EACCESS
+  nameWithType: CopyFile.Status.EACCESS
+  fullName: CopyFile.Status.EACCESS
+  type: Field
+  assemblies:
+  - CopyFile
+  namespace: Darwin
+  summary: >-
+    Search permission is denied for a component of the path prefix
+                for the source or destination parameters; or write permission is
+                denied for a component of the path prefix for the to parameter.
+  syntax:
+    content: EACCESS
+    return:
+      type: Darwin.CopyFile+Status
+      description: To be added.
+  exceptions: []
+- uid: Darwin.CopyFile.Status.ECANCELED
+  id: ECANCELED
+  parent: Darwin.CopyFile.Status
+  langs:
+  - csharp
+  name: ECANCELED
+  nameWithType: CopyFile.Status.ECANCELED
+  fullName: CopyFile.Status.ECANCELED
+  type: Field
+  assemblies:
+  - CopyFile
+  namespace: Darwin
+  summary: The copy was cancelled by callback.
+  syntax:
+    content: ECANCELED
+    return:
+      type: Darwin.CopyFile+Status
+      description: To be added.
+  exceptions: []
+- uid: Darwin.CopyFile.Status.EEXISTS
+  id: EEXISTS
+  parent: Darwin.CopyFile.Status
+  langs:
+  - csharp
+  name: EEXISTS
+  nameWithType: CopyFile.Status.EEXISTS
+  fullName: CopyFile.Status.EEXISTS
+  type: Field
+  assemblies:
+  - CopyFile
+  namespace: Darwin
+  summary: The destination parameter to Copy already existed and was passed in with Flags.Excl
+  syntax:
+    content: EEXISTS
+    return:
+      type: Darwin.CopyFile+Status
+      description: To be added.
+  exceptions: []
+- uid: Darwin.CopyFile.Status.EINVAL
+  id: EINVAL
+  parent: Darwin.CopyFile.Status
+  langs:
+  - csharp
+  name: EINVAL
+  nameWithType: CopyFile.Status.EINVAL
+  fullName: CopyFile.Status.EINVAL
+  type: Field
+  assemblies:
+  - CopyFile
+  namespace: Darwin
+  summary: An invalid flag was passed to Copy for recursive copies, or a parameter is invalid
+  syntax:
+    content: EINVAL
+    return:
+      type: Darwin.CopyFile+Status
+      description: To be added.
+  exceptions: []
+- uid: Darwin.CopyFile.Status.ENOENT
+  id: ENOENT
+  parent: Darwin.CopyFile.Status
+  langs:
+  - csharp
+  name: ENOENT
+  nameWithType: CopyFile.Status.ENOENT
+  fullName: CopyFile.Status.ENOENT
+  type: Field
+  assemblies:
+  - CopyFile
+  namespace: Darwin
+  summary: The source parameter to Copy does not exist.
+  syntax:
+    content: ENOENT
+    return:
+      type: Darwin.CopyFile+Status
+      description: To be added.
+  exceptions: []
+- uid: Darwin.CopyFile.Status.ENOTMEM
+  id: ENOTMEM
+  parent: Darwin.CopyFile.Status
+  langs:
+  - csharp
+  name: ENOTMEM
+  nameWithType: CopyFile.Status.ENOTMEM
+  fullName: CopyFile.Status.ENOTMEM
+  type: Field
+  assemblies:
+  - CopyFile
+  namespace: Darwin
+  summary: Memory allocation failed
+  syntax:
+    content: ENOTMEM
+    return:
+      type: Darwin.CopyFile+Status
+      description: To be added.
+  exceptions: []
+- uid: Darwin.CopyFile.Status.ENOTSUP
+  id: ENOTSUP
+  parent: Darwin.CopyFile.Status
+  langs:
+  - csharp
+  name: ENOTSUP
+  nameWithType: CopyFile.Status.ENOTSUP
+  fullName: CopyFile.Status.ENOTSUP
+  type: Field
+  assemblies:
+  - CopyFile
+  namespace: Darwin
+  summary: >-
+    The source file was not a directory, symbolic link, or regular file,
+                Flags.CloneForce was specified and file cloning is not supported or
+                Flags.DataSparse was specified, sparse copying is not supported, and Flags.Data
+                was not specified.
+  syntax:
+    content: ENOTSUP
+    return:
+      type: Darwin.CopyFile+Status
+      description: To be added.
+  exceptions: []
+- uid: Darwin.CopyFile.Status.Ok
+  id: Ok
+  parent: Darwin.CopyFile.Status
+  langs:
+  - csharp
+  name: Ok
+  nameWithType: CopyFile.Status.Ok
+  fullName: CopyFile.Status.Ok
+  type: Field
+  assemblies:
+  - CopyFile
+  namespace: Darwin
+  summary: The operation was successful.
+  syntax:
+    content: Ok
+    return:
+      type: Darwin.CopyFile+Status
+      description: To be added.
+  exceptions: []
+references:
+- uid: System.Enum
+  parent: System
+  isExternal: true
+  name: Enum
+  nameWithType: Enum
+  fullName: System.Enum
+- uid: Darwin.CopyFile.Status.EACCESS
+  parent: Darwin.CopyFile.Status
+  isExternal: false
+  name: EACCESS
+  nameWithType: CopyFile.Status.EACCESS
+  fullName: CopyFile.Status.EACCESS
+- uid: Darwin.CopyFile
+  parent: Darwin
+  isExternal: false
+  name: CopyFile
+  nameWithType: CopyFile
+  fullName: Darwin.CopyFile+Status
+- uid: Darwin.CopyFile.Status.ECANCELED
+  parent: Darwin.CopyFile.Status
+  isExternal: false
+  name: ECANCELED
+  nameWithType: CopyFile.Status.ECANCELED
+  fullName: CopyFile.Status.ECANCELED
+- uid: Darwin.CopyFile.Status.EEXISTS
+  parent: Darwin.CopyFile.Status
+  isExternal: false
+  name: EEXISTS
+  nameWithType: CopyFile.Status.EEXISTS
+  fullName: CopyFile.Status.EEXISTS
+- uid: Darwin.CopyFile.Status.EINVAL
+  parent: Darwin.CopyFile.Status
+  isExternal: false
+  name: EINVAL
+  nameWithType: CopyFile.Status.EINVAL
+  fullName: CopyFile.Status.EINVAL
+- uid: Darwin.CopyFile.Status.ENOENT
+  parent: Darwin.CopyFile.Status
+  isExternal: false
+  name: ENOENT
+  nameWithType: CopyFile.Status.ENOENT
+  fullName: CopyFile.Status.ENOENT
+- uid: Darwin.CopyFile.Status.ENOTMEM
+  parent: Darwin.CopyFile.Status
+  isExternal: false
+  name: ENOTMEM
+  nameWithType: CopyFile.Status.ENOTMEM
+  fullName: CopyFile.Status.ENOTMEM
+- uid: Darwin.CopyFile.Status.ENOTSUP
+  parent: Darwin.CopyFile.Status
+  isExternal: false
+  name: ENOTSUP
+  nameWithType: CopyFile.Status.ENOTSUP
+  fullName: CopyFile.Status.ENOTSUP
+- uid: Darwin.CopyFile.Status.Ok
+  parent: Darwin.CopyFile.Status
+  isExternal: false
+  name: Ok
+  nameWithType: CopyFile.Status.Ok
+  fullName: CopyFile.Status.Ok

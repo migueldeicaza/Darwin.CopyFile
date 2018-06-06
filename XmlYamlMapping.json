@@ -1,0 +1,11 @@
+{
+  "/cvs/CopyFile/ecmadocs/en/Darwin/CopyFile+Stage.xml": "/cvs/CopyFile/docfx/api/Darwin/Darwin.CopyFile.Stage.yml",
+  "/cvs/CopyFile/ecmadocs/en/Darwin/CopyFile+Flags.xml": "/cvs/CopyFile/docfx/api/Darwin/Darwin.CopyFile.Flags.yml",
+  "/cvs/CopyFile/ecmadocs/en/Darwin/CopyFile+Status.xml": "/cvs/CopyFile/docfx/api/Darwin/Darwin.CopyFile.Status.yml",
+  "/cvs/CopyFile/ecmadocs/en/ns-Darwin.xml": "/cvs/CopyFile/docfx/api/Darwin.yml",
+  "/cvs/CopyFile/ecmadocs/en/Darwin/CopyFile+State.xml": "/cvs/CopyFile/docfx/api/Darwin/Darwin.CopyFile.State.yml",
+  "/cvs/CopyFile/ecmadocs/en/Darwin/CopyFile.xml": "/cvs/CopyFile/docfx/api/Darwin/Darwin.CopyFile.yml",
+  "/cvs/CopyFile/ecmadocs/en/Darwin/CopyFile+State+ProgressCallback.xml": "/cvs/CopyFile/docfx/api/Darwin/Darwin.CopyFile.State.ProgressCallback.yml",
+  "/cvs/CopyFile/ecmadocs/en/Darwin/CopyFile+NextStep.xml": "/cvs/CopyFile/docfx/api/Darwin/Darwin.CopyFile.NextStep.yml",
+  "/cvs/CopyFile/ecmadocs/en/Darwin/CopyFile+Progress.xml": "/cvs/CopyFile/docfx/api/Darwin/Darwin.CopyFile.Progress.yml"
+}

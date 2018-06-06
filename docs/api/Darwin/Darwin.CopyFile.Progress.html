@@ -1,0 +1,169 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Enum CopyFile.Progress
+   </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Enum CopyFile.Progress
+   ">
+    <meta name="generator" content="docfx 2.18.2.0">
+    
+    <link rel="shortcut icon" href="../../favicon.ico">
+    <link rel="stylesheet" href="../../styles/docfx.vendor.css">
+    <link rel="stylesheet" href="../../styles/docfx.css">
+    <link rel="stylesheet" href="../../styles/main.css">
+    <meta property="docfx:navrel" content="../../toc.html">
+    <meta property="docfx:tocrel" content="../toc.html">
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="../../index.html">
+                <img id="logo" class="svg" src="../../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+        
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="Darwin.CopyFile.Progress">
+  
+  
+  <h1 id="Darwin_CopyFile_Progress" data-uid="Darwin.CopyFile.Progress">Enum CopyFile.Progress
+  </h1>
+  <div class="markdown level0 summary"><p>Provides the progress of a recursive copy operation</p>
+</div>
+  <div class="markdown level0 conceptual"></div>
+  <h6><strong>Namespace</strong>: <a class="xref" href="../Darwin.html">Darwin</a></h6>
+  <h6><strong>Assembly</strong>: CopyFile.dll</h6>
+  <h5 id="Darwin_CopyFile_Progress_syntax">Syntax</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public enum CopyFile.Progress</code></pre>
+  </div>
+  <h3 id="fields">Fields
+  </h3>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    <thead>
+    <tbody>
+      <tr>
+        <td id="Darwin_CopyFile_Progress_CopyData">CopyData</td>
+        <td><p>Invoked on every write call.   The second argument will either be Stage.Progress, or Stage.Error.
+            The amount of data copied so far can be retrieved from the State.Copied property.</p>
+</td>
+      </tr>
+      <tr>
+        <td id="Darwin_CopyFile_Progress_CopyXattr">CopyXattr</td>
+        <td><p>Invoked when copying is copying extended attributes.  The name of the extended attribute being
+            copied will be on the State.XattrName property.  Any attribute skipped by returning Skip from the
+            Start callback will not be placed into the  packed output file.</p>
+</td>
+      </tr>
+      <tr>
+        <td id="Darwin_CopyFile_Progress_Directory">Directory</td>
+        <td><p>The object being copied is a directory, and is being entered.  (That is, none of the filesystem
+            objects contained within the directory have been copied yet.)</p>
+</td>
+      </tr>
+      <tr>
+        <td id="Darwin_CopyFile_Progress_DirectoryCleanup">DirectoryCleanup</td>
+        <td><p>The object being copied is a directory, and all of the objects contained have been copied.  At
+            this stage, the destination directory being copied will have any extra permissions that were
+            added to allow the copying will be removed.</p>
+</td>
+      </tr>
+      <tr>
+        <td id="Darwin_CopyFile_Progress_Error">Error</td>
+        <td><p>There was an error in processing an element of the source hierarchy; this happens when fts(3)
+            returns an error or unknown file type.  (Currently, the second argument to the call-back 
+            function will always be Progress.Error in this case.)</p>
+</td>
+      </tr>
+      <tr>
+        <td id="Darwin_CopyFile_Progress_File">File</td>
+        <td><p>The object being copied is a file (or, rather, something other than a directory).</p>
+</td>
+      </tr>
+    </tbody>
+  </thead></thead></table>
+</article>
+          </div>
+          
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+              <!-- <p><a class="back-to-top" href="#top">Back to top</a><p> -->
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            
+            <span>Copyright © 2015-2017 Microsoft<br>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="../../styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="../../styles/docfx.js"></script>
+    <script type="text/javascript" src="../../styles/main.js"></script>
+  </body>
+</html>

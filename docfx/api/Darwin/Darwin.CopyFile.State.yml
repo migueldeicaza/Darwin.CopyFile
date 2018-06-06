@@ -1,0 +1,437 @@
+### YamlMime:ManagedReference
+items:
+- uid: Darwin.CopyFile.State
+  id: CopyFile.State
+  children:
+  - Darwin.CopyFile.State.#ctor
+  - Darwin.CopyFile.State.Copied
+  - Darwin.CopyFile.State.DestFD
+  - Darwin.CopyFile.State.DestinationFileName
+  - Darwin.CopyFile.State.Dispose(System.Boolean)
+  - Darwin.CopyFile.State.Finalize
+  - Darwin.CopyFile.State.SetStatusCallback(Darwin.CopyFile.State.ProgressCallback)
+  - Darwin.CopyFile.State.SourceFD
+  - Darwin.CopyFile.State.SourceFileName
+  - Darwin.CopyFile.State.XAttrName
+  - Darwin.CopyFile.State.System#IDisposable#Dispose
+  langs:
+  - csharp
+  name: CopyFile.State
+  nameWithType: CopyFile.State
+  fullName: Darwin.CopyFile.State
+  type: Class
+  assemblies:
+  - CopyFile
+  namespace: Darwin
+  summary: >-
+    State that can be used to call CopyFile, you can use this to configure some properties of the
+                  copy operation.
+  remarks: <p>Use the SetStatusCallback method to configure a callback method to be used for recursive copy operations.</p>
+  syntax:
+    content: 'public class CopyFile.State : IDisposable'
+  inheritance:
+  - System.Object
+  implements:
+  - System.IDisposable
+  inheritedMembers: []
+- uid: Darwin.CopyFile.State.#ctor
+  id: '#ctor'
+  parent: Darwin.CopyFile.State
+  langs:
+  - csharp
+  name: CopyFile.State()
+  nameWithType: CopyFile.State.CopyFile.State()
+  fullName: CopyFile.State.CopyFile.State()
+  type: Constructor
+  assemblies:
+  - CopyFile
+  namespace: Darwin
+  summary: Creates a new state object used to control the recursive copying operation
+  syntax:
+    content: public State ();
+    parameters: []
+  overload: Darwin.CopyFile.State.#ctor*
+  exceptions: []
+- uid: Darwin.CopyFile.State.Copied
+  id: Copied
+  parent: Darwin.CopyFile.State
+  langs:
+  - csharp
+  name: Copied
+  nameWithType: CopyFile.State.Copied
+  fullName: CopyFile.State.Copied
+  type: Property
+  assemblies:
+  - CopyFile
+  namespace: Darwin
+  summary: The number of bytes copied so far
+  syntax:
+    content: public long Copied { get; }
+    return:
+      type: System.Int64
+      description: To be added.
+  overload: Darwin.CopyFile.State.Copied*
+  exceptions: []
+- uid: Darwin.CopyFile.State.DestFD
+  id: DestFD
+  parent: Darwin.CopyFile.State
+  langs:
+  - csharp
+  name: DestFD
+  nameWithType: CopyFile.State.DestFD
+  fullName: CopyFile.State.DestFD
+  type: Property
+  assemblies:
+  - CopyFile
+  namespace: Darwin
+  summary: >-
+    Get or set the file descriptor associated with the destiation file.
+                If this has not been initialized yet, the value will be -2.
+  syntax:
+    content: public int DestFD { get; set; }
+    return:
+      type: System.Int32
+      description: To be added.
+  overload: Darwin.CopyFile.State.DestFD*
+  exceptions: []
+- uid: Darwin.CopyFile.State.DestinationFileName
+  id: DestinationFileName
+  parent: Darwin.CopyFile.State
+  langs:
+  - csharp
+  name: DestinationFileName
+  nameWithType: CopyFile.State.DestinationFileName
+  fullName: CopyFile.State.DestinationFileName
+  type: Property
+  assemblies:
+  - CopyFile
+  namespace: Darwin
+  summary: >-
+    Get or set the filename associated with the source, if this has not been
+                initialized, the value will be null.
+  syntax:
+    content: public string DestinationFileName { get; set; }
+    return:
+      type: System.String
+      description: To be added.
+  overload: Darwin.CopyFile.State.DestinationFileName*
+  exceptions: []
+- uid: Darwin.CopyFile.State.Dispose(System.Boolean)
+  id: Dispose(System.Boolean)
+  parent: Darwin.CopyFile.State
+  langs:
+  - csharp
+  name: Dispose(Boolean)
+  nameWithType: CopyFile.State.Dispose(Boolean)
+  fullName: CopyFile.State.Dispose(Boolean)
+  type: Method
+  assemblies:
+  - CopyFile
+  namespace: Darwin
+  summary: Disposes the object
+  syntax:
+    content: protected virtual void Dispose (bool disposing);
+    parameters:
+    - id: disposing
+      type: System.Boolean
+      description: To be added.
+  overload: Darwin.CopyFile.State.Dispose*
+  exceptions: []
+- uid: Darwin.CopyFile.State.Finalize
+  id: Finalize
+  parent: Darwin.CopyFile.State
+  langs:
+  - csharp
+  name: Finalize()
+  nameWithType: CopyFile.State.Finalize()
+  fullName: CopyFile.State.Finalize()
+  type: Method
+  assemblies:
+  - CopyFile
+  namespace: Darwin
+  summary: Finalizer
+  syntax:
+    content: ~State ();
+    parameters: []
+  overload: Darwin.CopyFile.State.Finalize*
+  exceptions: []
+- uid: Darwin.CopyFile.State.SetStatusCallback(Darwin.CopyFile.State.ProgressCallback)
+  id: SetStatusCallback(Darwin.CopyFile.State.ProgressCallback)
+  parent: Darwin.CopyFile.State
+  langs:
+  - csharp
+  name: SetStatusCallback(CopyFile+State+ProgressCallback)
+  nameWithType: CopyFile.State.SetStatusCallback(CopyFile+State+ProgressCallback)
+  fullName: CopyFile.State.SetStatusCallback(CopyFile+State+ProgressCallback)
+  type: Method
+  assemblies:
+  - CopyFile
+  namespace: Darwin
+  summary: >-
+    Sets a callback that is invoked during recursive copies and can allow you to
+                monitor and control the copying process.
+  syntax:
+    content: public void SetStatusCallback (Darwin.CopyFile.State.ProgressCallback callback);
+    parameters:
+    - id: callback
+      type: Darwin.CopyFile+State+ProgressCallback
+      description: To be added.
+  overload: Darwin.CopyFile.State.SetStatusCallback*
+  exceptions: []
+- uid: Darwin.CopyFile.State.SourceFD
+  id: SourceFD
+  parent: Darwin.CopyFile.State
+  langs:
+  - csharp
+  name: SourceFD
+  nameWithType: CopyFile.State.SourceFD
+  fullName: CopyFile.State.SourceFD
+  type: Property
+  assemblies:
+  - CopyFile
+  namespace: Darwin
+  summary: >-
+    Get or set the file descriptor associated with the source file.
+                If this has not been initialized yet, the value will be -2.
+  syntax:
+    content: public int SourceFD { get; set; }
+    return:
+      type: System.Int32
+      description: To be added.
+  overload: Darwin.CopyFile.State.SourceFD*
+  exceptions: []
+- uid: Darwin.CopyFile.State.SourceFileName
+  id: SourceFileName
+  parent: Darwin.CopyFile.State
+  langs:
+  - csharp
+  name: SourceFileName
+  nameWithType: CopyFile.State.SourceFileName
+  fullName: CopyFile.State.SourceFileName
+  type: Property
+  assemblies:
+  - CopyFile
+  namespace: Darwin
+  summary: >-
+    Get or set the filename associated with the source, if this has not been
+                initialized, the value will be null.
+  syntax:
+    content: public string SourceFileName { get; set; }
+    return:
+      type: System.String
+      description: To be added.
+  overload: Darwin.CopyFile.State.SourceFileName*
+  exceptions: []
+- uid: Darwin.CopyFile.State.XAttrName
+  id: XAttrName
+  parent: Darwin.CopyFile.State
+  langs:
+  - csharp
+  name: XAttrName
+  nameWithType: CopyFile.State.XAttrName
+  fullName: CopyFile.State.XAttrName
+  type: Property
+  assemblies:
+  - CopyFile
+  namespace: Darwin
+  summary: Retursn the name of the current extended attribute being copied
+  syntax:
+    content: public string XAttrName { get; }
+    return:
+      type: System.String
+      description: To be added.
+  overload: Darwin.CopyFile.State.XAttrName*
+  exceptions: []
+- uid: Darwin.CopyFile.State.System#IDisposable#Dispose
+  id: System#IDisposable#Dispose
+  isEii: true
+  parent: Darwin.CopyFile.State
+  langs:
+  - csharp
+  name: IDisposable.Dispose()
+  nameWithType: CopyFile.State.IDisposable.Dispose()
+  fullName: CopyFile.State.IDisposable.Dispose()
+  type: Method
+  assemblies:
+  - CopyFile
+  namespace: Darwin
+  syntax:
+    content: void IDisposable.Dispose ();
+    parameters: []
+  overload: Darwin.CopyFile.State.System#IDisposable#Dispose*
+  exceptions: []
+references:
+- uid: System.Object
+  parent: System
+  isExternal: true
+  name: Object
+  nameWithType: Object
+  fullName: System.Object
+- uid: Darwin.CopyFile.State.#ctor
+  parent: Darwin.CopyFile.State
+  isExternal: false
+  name: CopyFile.State()
+  nameWithType: CopyFile.State.CopyFile.State()
+  fullName: CopyFile.State.CopyFile.State()
+- uid: Darwin.CopyFile.State.Copied
+  parent: Darwin.CopyFile.State
+  isExternal: false
+  name: Copied
+  nameWithType: CopyFile.State.Copied
+  fullName: CopyFile.State.Copied
+- uid: System.Int64
+  parent: System
+  isExternal: true
+  name: Int64
+  nameWithType: Int64
+  fullName: System.Int64
+- uid: Darwin.CopyFile.State.DestFD
+  parent: Darwin.CopyFile.State
+  isExternal: false
+  name: DestFD
+  nameWithType: CopyFile.State.DestFD
+  fullName: CopyFile.State.DestFD
+- uid: System.Int32
+  parent: System
+  isExternal: true
+  name: Int32
+  nameWithType: Int32
+  fullName: System.Int32
+- uid: Darwin.CopyFile.State.DestinationFileName
+  parent: Darwin.CopyFile.State
+  isExternal: false
+  name: DestinationFileName
+  nameWithType: CopyFile.State.DestinationFileName
+  fullName: CopyFile.State.DestinationFileName
+- uid: System.String
+  parent: System
+  isExternal: true
+  name: String
+  nameWithType: String
+  fullName: System.String
+- uid: Darwin.CopyFile.State.Dispose(System.Boolean)
+  parent: Darwin.CopyFile.State
+  isExternal: false
+  name: Dispose(Boolean)
+  nameWithType: CopyFile.State.Dispose(Boolean)
+  fullName: CopyFile.State.Dispose(Boolean)
+- uid: System.Boolean
+  parent: System
+  isExternal: true
+  name: Boolean
+  nameWithType: Boolean
+  fullName: System.Boolean
+- uid: Darwin.CopyFile.State.Finalize
+  parent: Darwin.CopyFile.State
+  isExternal: false
+  name: Finalize()
+  nameWithType: CopyFile.State.Finalize()
+  fullName: CopyFile.State.Finalize()
+- uid: Darwin.CopyFile.State.SetStatusCallback(Darwin.CopyFile.State.ProgressCallback)
+  parent: Darwin.CopyFile.State
+  isExternal: false
+  name: SetStatusCallback(CopyFile+State+ProgressCallback)
+  nameWithType: CopyFile.State.SetStatusCallback(CopyFile+State+ProgressCallback)
+  fullName: CopyFile.State.SetStatusCallback(CopyFile+State+ProgressCallback)
+- uid: Darwin.CopyFile
+  parent: Darwin
+  isExternal: false
+  name: CopyFile
+  nameWithType: CopyFile
+  fullName: Darwin.CopyFile+State+ProgressCallback
+- uid: Darwin.CopyFile.State.SourceFD
+  parent: Darwin.CopyFile.State
+  isExternal: false
+  name: SourceFD
+  nameWithType: CopyFile.State.SourceFD
+  fullName: CopyFile.State.SourceFD
+- uid: Darwin.CopyFile.State.SourceFileName
+  parent: Darwin.CopyFile.State
+  isExternal: false
+  name: SourceFileName
+  nameWithType: CopyFile.State.SourceFileName
+  fullName: CopyFile.State.SourceFileName
+- uid: Darwin.CopyFile.State.XAttrName
+  parent: Darwin.CopyFile.State
+  isExternal: false
+  name: XAttrName
+  nameWithType: CopyFile.State.XAttrName
+  fullName: CopyFile.State.XAttrName
+- uid: Darwin.CopyFile.State.System#IDisposable#Dispose
+  parent: Darwin.CopyFile.State
+  isExternal: false
+  name: IDisposable.Dispose()
+  nameWithType: CopyFile.State.IDisposable.Dispose()
+  fullName: CopyFile.State.IDisposable.Dispose()
+- uid: Darwin.CopyFile.State.#ctor*
+  parent: Darwin.CopyFile.State
+  isExternal: false
+  name: CopyFile.State
+  nameWithType: CopyFile.State.CopyFile.State
+  fullName: CopyFile.State.CopyFile.State
+- uid: Darwin.CopyFile.State.Copied*
+  parent: Darwin.CopyFile.State
+  isExternal: false
+  name: Copied
+  nameWithType: CopyFile.State.Copied
+  fullName: CopyFile.State.Copied
+- uid: Darwin.CopyFile.State.DestFD*
+  parent: Darwin.CopyFile.State
+  isExternal: false
+  name: DestFD
+  nameWithType: CopyFile.State.DestFD
+  fullName: CopyFile.State.DestFD
+- uid: Darwin.CopyFile.State.DestinationFileName*
+  parent: Darwin.CopyFile.State
+  isExternal: false
+  name: DestinationFileName
+  nameWithType: CopyFile.State.DestinationFileName
+  fullName: CopyFile.State.DestinationFileName
+- uid: Darwin.CopyFile.State.Dispose*
+  parent: Darwin.CopyFile.State
+  isExternal: false
+  name: Dispose
+  nameWithType: CopyFile.State.Dispose
+  fullName: CopyFile.State.Dispose
+- uid: Darwin.CopyFile.State.Finalize*
+  parent: Darwin.CopyFile.State
+  isExternal: false
+  name: Finalize
+  nameWithType: CopyFile.State.Finalize
+  fullName: CopyFile.State.Finalize
+- uid: Darwin.CopyFile.State.SetStatusCallback*
+  parent: Darwin.CopyFile.State
+  isExternal: false
+  name: SetStatusCallback
+  nameWithType: CopyFile.State.SetStatusCallback
+  fullName: CopyFile.State.SetStatusCallback
+- uid: Darwin.CopyFile.State.SourceFD*
+  parent: Darwin.CopyFile.State
+  isExternal: false
+  name: SourceFD
+  nameWithType: CopyFile.State.SourceFD
+  fullName: CopyFile.State.SourceFD
+- uid: Darwin.CopyFile.State.SourceFileName*
+  parent: Darwin.CopyFile.State
+  isExternal: false
+  name: SourceFileName
+  nameWithType: CopyFile.State.SourceFileName
+  fullName: CopyFile.State.SourceFileName
+- uid: Darwin.CopyFile.State.XAttrName*
+  parent: Darwin.CopyFile.State
+  isExternal: false
+  name: XAttrName
+  nameWithType: CopyFile.State.XAttrName
+  fullName: CopyFile.State.XAttrName
+- uid: Darwin.CopyFile.State.System#IDisposable#Dispose*
+  parent: Darwin.CopyFile.State
+  isExternal: false
+  name: System.IDisposable.Dispose
+  nameWithType: CopyFile.State.System.IDisposable.Dispose
+  fullName: CopyFile.State.System.IDisposable.Dispose
+- uid: System.IDisposable
+  parent: System
+  isExternal: true
+  name: IDisposable
+  nameWithType: IDisposable
+  fullName: System.IDisposable

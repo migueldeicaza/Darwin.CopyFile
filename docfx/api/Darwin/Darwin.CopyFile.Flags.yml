@@ -1,0 +1,636 @@
+### YamlMime:ManagedReference
+items:
+- uid: Darwin.CopyFile.Flags
+  id: CopyFile.Flags
+  children:
+  - Darwin.CopyFile.Flags.Acl
+  - Darwin.CopyFile.Flags.All
+  - Darwin.CopyFile.Flags.Check
+  - Darwin.CopyFile.Flags.Clone
+  - Darwin.CopyFile.Flags.CloneForce
+  - Darwin.CopyFile.Flags.Data
+  - Darwin.CopyFile.Flags.DataSparse
+  - Darwin.CopyFile.Flags.Excl
+  - Darwin.CopyFile.Flags.Metadata
+  - Darwin.CopyFile.Flags.Move
+  - Darwin.CopyFile.Flags.NoFollow
+  - Darwin.CopyFile.Flags.NoFollowDst
+  - Darwin.CopyFile.Flags.NoFollowSrc
+  - Darwin.CopyFile.Flags.Pack
+  - Darwin.CopyFile.Flags.Recursive
+  - Darwin.CopyFile.Flags.RunInPlace
+  - Darwin.CopyFile.Flags.Security
+  - Darwin.CopyFile.Flags.Stat
+  - Darwin.CopyFile.Flags.Unlink
+  - Darwin.CopyFile.Flags.UnPack
+  - Darwin.CopyFile.Flags.Verbose
+  - Darwin.CopyFile.Flags.Xattr
+  langs:
+  - csharp
+  name: CopyFile.Flags
+  nameWithType: CopyFile.Flags
+  fullName: Darwin.CopyFile.Flags
+  type: Enum
+  assemblies:
+  - CopyFile
+  namespace: Darwin
+  summary: Flags that control how the CopyFile APIs operate
+  syntax:
+    content: >-
+      [System.Flags]
+
+      public enum CopyFile.Flags
+  inheritance:
+  - System.Enum
+  attributes:
+  - type: System.Flags
+- uid: Darwin.CopyFile.Flags.Acl
+  id: Acl
+  parent: Darwin.CopyFile.Flags
+  langs:
+  - csharp
+  name: Acl
+  nameWithType: CopyFile.Flags.Acl
+  fullName: CopyFile.Flags.Acl
+  type: Field
+  assemblies:
+  - CopyFile
+  namespace: Darwin
+  summary: Copy the source file's access control lists.
+  syntax:
+    content: Acl
+    return:
+      type: Darwin.CopyFile+Flags
+      description: To be added.
+  exceptions: []
+- uid: Darwin.CopyFile.Flags.All
+  id: All
+  parent: Darwin.CopyFile.Flags
+  langs:
+  - csharp
+  name: All
+  nameWithType: CopyFile.Flags.All
+  fullName: CopyFile.Flags.All
+  type: Field
+  assemblies:
+  - CopyFile
+  namespace: Darwin
+  summary: Copy the entire file; equivalent to Metadata | All
+  syntax:
+    content: All
+    return:
+      type: Darwin.CopyFile+Flags
+      description: To be added.
+  exceptions: []
+- uid: Darwin.CopyFile.Flags.Check
+  id: Check
+  parent: Darwin.CopyFile.Flags
+  langs:
+  - csharp
+  name: Check
+  nameWithType: CopyFile.Flags.Check
+  fullName: CopyFile.Flags.Check
+  type: Field
+  assemblies:
+  - CopyFile
+  namespace: Darwin
+  summary: >-
+    Return a bitmask, corresponding to the Flags indicating which contents would be copied; no
+                data are actually copied.  (E.g., if flags was set to Check|Metadata, and the from
+                file had extended attributes but no ACLs, the return value would be Xattr)
+  syntax:
+    content: Check
+    return:
+      type: Darwin.CopyFile+Flags
+      description: To be added.
+  exceptions: []
+- uid: Darwin.CopyFile.Flags.Clone
+  id: Clone
+  parent: Darwin.CopyFile.Flags
+  langs:
+  - csharp
+  name: Clone
+  nameWithType: CopyFile.Flags.Clone
+  fullName: CopyFile.Flags.Clone
+  type: Field
+  assemblies:
+  - CopyFile
+  namespace: Darwin
+  summary: >-
+    Try to clone the file instead.  This is a best try flag i.e. if cloning fails, fallback to copying the
+                 file.  This flag is equivalent to Excl | Acl | Stat | Xattr | Data | NoFollowSrc
+                 Note that if cloning is successful, progress callbacks will
+                 not be invoked.  Note also that there is no support for cloning directories: if a directory is pro-
+                 vided as the source and CloneForce is not passed, this will instead copy the directory.
+                 Recursive copying however is supported, see below for more information.  (Only CopyFile).
+  syntax:
+    content: Clone
+    return:
+      type: Darwin.CopyFile+Flags
+      description: To be added.
+  exceptions: []
+- uid: Darwin.CopyFile.Flags.CloneForce
+  id: CloneForce
+  parent: Darwin.CopyFile.Flags
+  langs:
+  - csharp
+  name: CloneForce
+  nameWithType: CopyFile.Flags.CloneForce
+  fullName: CopyFile.Flags.CloneForce
+  type: Field
+  assemblies:
+  - CopyFile
+  namespace: Darwin
+  summary: >-
+    Clone the file instead.  This is a force flag i.e. if cloning fails, an error is returned.  This flag
+                is equivalent to Excl | Acl | Stat | Xattr | Data | NoFollowSrc
+                Note that if cloning is successful, progress callbacks will not be invoked.
+                Note also that there is no support for cloning directories: if a directory is provided as the source,
+                an error will be returned.  (Only CopyFile).
+  syntax:
+    content: CloneForce
+    return:
+      type: Darwin.CopyFile+Flags
+      description: To be added.
+  exceptions: []
+- uid: Darwin.CopyFile.Flags.Data
+  id: Data
+  parent: Darwin.CopyFile.Flags
+  langs:
+  - csharp
+  name: Data
+  nameWithType: CopyFile.Flags.Data
+  fullName: CopyFile.Flags.Data
+  type: Field
+  assemblies:
+  - CopyFile
+  namespace: Darwin
+  summary: Copy the source file's data.
+  syntax:
+    content: Data
+    return:
+      type: Darwin.CopyFile+Flags
+      description: To be added.
+  exceptions: []
+- uid: Darwin.CopyFile.Flags.DataSparse
+  id: DataSparse
+  parent: Darwin.CopyFile.Flags
+  langs:
+  - csharp
+  name: DataSparse
+  nameWithType: CopyFile.Flags.DataSparse
+  fullName: CopyFile.Flags.DataSparse
+  type: Field
+  assemblies:
+  - CopyFile
+  namespace: Darwin
+  summary: >-
+    Copy a file sparsely.  This requires that the source and destination file systems support sparse files
+                with hole sizes at least as large as their block sizes.  This also requires that the source file is
+                sparse, and for fcopyfile() the source file descriptor's offset be a multiple of the minimum hole
+                size.  If Data is also specified, this will fall back to a full copy if sparse copying cannot
+                be performed for any reason; otherwise, an error is returned.
+  syntax:
+    content: DataSparse
+    return:
+      type: Darwin.CopyFile+Flags
+      description: To be added.
+  exceptions: []
+- uid: Darwin.CopyFile.Flags.Excl
+  id: Excl
+  parent: Darwin.CopyFile.Flags
+  langs:
+  - csharp
+  name: Excl
+  nameWithType: CopyFile.Flags.Excl
+  fullName: CopyFile.Flags.Excl
+  type: Field
+  assemblies:
+  - CopyFile
+  namespace: Darwin
+  summary: Fail if the to file already exists.
+  syntax:
+    content: Excl
+    return:
+      type: Darwin.CopyFile+Flags
+      description: To be added.
+  exceptions: []
+- uid: Darwin.CopyFile.Flags.Metadata
+  id: Metadata
+  parent: Darwin.CopyFile.Flags
+  langs:
+  - csharp
+  name: Metadata
+  nameWithType: CopyFile.Flags.Metadata
+  fullName: CopyFile.Flags.Metadata
+  type: Field
+  assemblies:
+  - CopyFile
+  namespace: Darwin
+  summary: Copy the metadata; equivalent to Security | Xattr
+  syntax:
+    content: Metadata
+    return:
+      type: Darwin.CopyFile+Flags
+      description: To be added.
+  exceptions: []
+- uid: Darwin.CopyFile.Flags.Move
+  id: Move
+  parent: Darwin.CopyFile.Flags
+  langs:
+  - csharp
+  name: Move
+  nameWithType: CopyFile.Flags.Move
+  fullName: CopyFile.Flags.Move
+  type: Field
+  assemblies:
+  - CopyFile
+  namespace: Darwin
+  summary: >-
+    Unlink (using remove(3)) the from file.  (Only CopyFile)  No
+                error is returned if remove(3) fails.  Note that remove(3) removes a symbolic link itself, not the
+                target of the link.
+  syntax:
+    content: Move
+    return:
+      type: Darwin.CopyFile+Flags
+      description: To be added.
+  exceptions: []
+- uid: Darwin.CopyFile.Flags.NoFollow
+  id: NoFollow
+  parent: Darwin.CopyFile.Flags
+  langs:
+  - csharp
+  name: NoFollow
+  nameWithType: CopyFile.Flags.NoFollow
+  fullName: CopyFile.Flags.NoFollow
+  type: Field
+  assemblies:
+  - CopyFile
+  namespace: Darwin
+  summary: Equivalent to NoFollowDst and NoFollowSrc
+  syntax:
+    content: NoFollow
+    return:
+      type: Darwin.CopyFile+Flags
+      description: To be added.
+  exceptions: []
+- uid: Darwin.CopyFile.Flags.NoFollowDst
+  id: NoFollowDst
+  parent: Darwin.CopyFile.Flags
+  langs:
+  - csharp
+  name: NoFollowDst
+  nameWithType: CopyFile.Flags.NoFollowDst
+  fullName: CopyFile.Flags.NoFollowDst
+  type: Field
+  assemblies:
+  - CopyFile
+  namespace: Darwin
+  summary: Do not follow the to file, if it is a symbolic link (only CopyFile)
+  syntax:
+    content: NoFollowDst
+    return:
+      type: Darwin.CopyFile+Flags
+      description: To be added.
+  exceptions: []
+- uid: Darwin.CopyFile.Flags.NoFollowSrc
+  id: NoFollowSrc
+  parent: Darwin.CopyFile.Flags
+  langs:
+  - csharp
+  name: NoFollowSrc
+  nameWithType: CopyFile.Flags.NoFollowSrc
+  fullName: CopyFile.Flags.NoFollowSrc
+  type: Field
+  assemblies:
+  - CopyFile
+  namespace: Darwin
+  summary: Do not follow the from file, if it is a symbolic link (only CopyFile).
+  syntax:
+    content: NoFollowSrc
+    return:
+      type: Darwin.CopyFile+Flags
+      description: To be added.
+  exceptions: []
+- uid: Darwin.CopyFile.Flags.Pack
+  id: Pack
+  parent: Darwin.CopyFile.Flags
+  langs:
+  - csharp
+  name: Pack
+  nameWithType: CopyFile.Flags.Pack
+  fullName: CopyFile.Flags.Pack
+  type: Field
+  assemblies:
+  - CopyFile
+  namespace: Darwin
+  summary: Serialize the from file.  The to file is an AppleDouble-format file.
+  syntax:
+    content: Pack
+    return:
+      type: Darwin.CopyFile+Flags
+      description: To be added.
+  exceptions: []
+- uid: Darwin.CopyFile.Flags.Recursive
+  id: Recursive
+  parent: Darwin.CopyFile.Flags
+  langs:
+  - csharp
+  name: Recursive
+  nameWithType: CopyFile.Flags.Recursive
+  fullName: CopyFile.Flags.Recursive
+  type: Field
+  assemblies:
+  - CopyFile
+  namespace: Darwin
+  summary: Causes CopyFile  to recursively copy a hierarchy.  It is not used by FCopyFile.
+  syntax:
+    content: Recursive
+    return:
+      type: Darwin.CopyFile+Flags
+      description: To be added.
+  exceptions: []
+- uid: Darwin.CopyFile.Flags.RunInPlace
+  id: RunInPlace
+  parent: Darwin.CopyFile.Flags
+  langs:
+  - csharp
+  name: RunInPlace
+  nameWithType: CopyFile.Flags.RunInPlace
+  fullName: CopyFile.Flags.RunInPlace
+  type: Field
+  assemblies:
+  - CopyFile
+  namespace: Darwin
+  summary: >-
+    If the src file has quarantine information, add the QTN_FLAG_DO_NOT_TRANSLOCATE flag to the quarantine
+                information of the dst file. This allows a bundle to run in place instead of being translocated.
+  syntax:
+    content: RunInPlace
+    return:
+      type: Darwin.CopyFile+Flags
+      description: To be added.
+  exceptions: []
+- uid: Darwin.CopyFile.Flags.Security
+  id: Security
+  parent: Darwin.CopyFile.Flags
+  langs:
+  - csharp
+  name: Security
+  nameWithType: CopyFile.Flags.Security
+  fullName: CopyFile.Flags.Security
+  type: Field
+  assemblies:
+  - CopyFile
+  namespace: Darwin
+  summary: Copy the source file's POSIX and ACL information; equivalent to Stat | Acl
+  syntax:
+    content: Security
+    return:
+      type: Darwin.CopyFile+Flags
+      description: To be added.
+  exceptions: []
+- uid: Darwin.CopyFile.Flags.Stat
+  id: Stat
+  parent: Darwin.CopyFile.Flags
+  langs:
+  - csharp
+  name: Stat
+  nameWithType: CopyFile.Flags.Stat
+  fullName: CopyFile.Flags.Stat
+  type: Field
+  assemblies:
+  - CopyFile
+  namespace: Darwin
+  summary: Copy the source file's POSIX information (mode, modification time, etc.).
+  syntax:
+    content: Stat
+    return:
+      type: Darwin.CopyFile+Flags
+      description: To be added.
+  exceptions: []
+- uid: Darwin.CopyFile.Flags.Unlink
+  id: Unlink
+  parent: Darwin.CopyFile.Flags
+  langs:
+  - csharp
+  name: Unlink
+  nameWithType: CopyFile.Flags.Unlink
+  fullName: CopyFile.Flags.Unlink
+  type: Field
+  assemblies:
+  - CopyFile
+  namespace: Darwin
+  summary: Unlink the to file before starting.  (Only CopyFile).
+  syntax:
+    content: Unlink
+    return:
+      type: Darwin.CopyFile+Flags
+      description: To be added.
+  exceptions: []
+- uid: Darwin.CopyFile.Flags.UnPack
+  id: UnPack
+  parent: Darwin.CopyFile.Flags
+  langs:
+  - csharp
+  name: UnPack
+  nameWithType: CopyFile.Flags.UnPack
+  fullName: CopyFile.Flags.UnPack
+  type: Field
+  assemblies:
+  - CopyFile
+  namespace: Darwin
+  summary: >-
+    Unserialize the from file.  The from file is an AppleDouble-format file; the to file will have the
+                 extended attributes, ACLs, resource fork, and FinderInfo data from the to file, regardless of the
+                 flags argument passed in.
+  syntax:
+    content: UnPack
+    return:
+      type: Darwin.CopyFile+Flags
+      description: To be added.
+  exceptions: []
+- uid: Darwin.CopyFile.Flags.Verbose
+  id: Verbose
+  parent: Darwin.CopyFile.Flags
+  langs:
+  - csharp
+  name: Verbose
+  nameWithType: CopyFile.Flags.Verbose
+  fullName: CopyFile.Flags.Verbose
+  type: Field
+  assemblies:
+  - CopyFile
+  namespace: Darwin
+  summary: Verbose copy
+  syntax:
+    content: Verbose
+    return:
+      type: Darwin.CopyFile+Flags
+      description: To be added.
+  exceptions: []
+- uid: Darwin.CopyFile.Flags.Xattr
+  id: Xattr
+  parent: Darwin.CopyFile.Flags
+  langs:
+  - csharp
+  name: Xattr
+  nameWithType: CopyFile.Flags.Xattr
+  fullName: CopyFile.Flags.Xattr
+  type: Field
+  assemblies:
+  - CopyFile
+  namespace: Darwin
+  summary: Copy the source file's extended attributes.
+  syntax:
+    content: Xattr
+    return:
+      type: Darwin.CopyFile+Flags
+      description: To be added.
+  exceptions: []
+references:
+- uid: System.Enum
+  parent: System
+  isExternal: true
+  name: Enum
+  nameWithType: Enum
+  fullName: System.Enum
+- uid: Darwin.CopyFile.Flags.Acl
+  parent: Darwin.CopyFile.Flags
+  isExternal: false
+  name: Acl
+  nameWithType: CopyFile.Flags.Acl
+  fullName: CopyFile.Flags.Acl
+- uid: Darwin.CopyFile
+  parent: Darwin
+  isExternal: false
+  name: CopyFile
+  nameWithType: CopyFile
+  fullName: Darwin.CopyFile+Flags
+- uid: Darwin.CopyFile.Flags.All
+  parent: Darwin.CopyFile.Flags
+  isExternal: false
+  name: All
+  nameWithType: CopyFile.Flags.All
+  fullName: CopyFile.Flags.All
+- uid: Darwin.CopyFile.Flags.Check
+  parent: Darwin.CopyFile.Flags
+  isExternal: false
+  name: Check
+  nameWithType: CopyFile.Flags.Check
+  fullName: CopyFile.Flags.Check
+- uid: Darwin.CopyFile.Flags.Clone
+  parent: Darwin.CopyFile.Flags
+  isExternal: false
+  name: Clone
+  nameWithType: CopyFile.Flags.Clone
+  fullName: CopyFile.Flags.Clone
+- uid: Darwin.CopyFile.Flags.CloneForce
+  parent: Darwin.CopyFile.Flags
+  isExternal: false
+  name: CloneForce
+  nameWithType: CopyFile.Flags.CloneForce
+  fullName: CopyFile.Flags.CloneForce
+- uid: Darwin.CopyFile.Flags.Data
+  parent: Darwin.CopyFile.Flags
+  isExternal: false
+  name: Data
+  nameWithType: CopyFile.Flags.Data
+  fullName: CopyFile.Flags.Data
+- uid: Darwin.CopyFile.Flags.DataSparse
+  parent: Darwin.CopyFile.Flags
+  isExternal: false
+  name: DataSparse
+  nameWithType: CopyFile.Flags.DataSparse
+  fullName: CopyFile.Flags.DataSparse
+- uid: Darwin.CopyFile.Flags.Excl
+  parent: Darwin.CopyFile.Flags
+  isExternal: false
+  name: Excl
+  nameWithType: CopyFile.Flags.Excl
+  fullName: CopyFile.Flags.Excl
+- uid: Darwin.CopyFile.Flags.Metadata
+  parent: Darwin.CopyFile.Flags
+  isExternal: false
+  name: Metadata
+  nameWithType: CopyFile.Flags.Metadata
+  fullName: CopyFile.Flags.Metadata
+- uid: Darwin.CopyFile.Flags.Move
+  parent: Darwin.CopyFile.Flags
+  isExternal: false
+  name: Move
+  nameWithType: CopyFile.Flags.Move
+  fullName: CopyFile.Flags.Move
+- uid: Darwin.CopyFile.Flags.NoFollow
+  parent: Darwin.CopyFile.Flags
+  isExternal: false
+  name: NoFollow
+  nameWithType: CopyFile.Flags.NoFollow
+  fullName: CopyFile.Flags.NoFollow
+- uid: Darwin.CopyFile.Flags.NoFollowDst
+  parent: Darwin.CopyFile.Flags
+  isExternal: false
+  name: NoFollowDst
+  nameWithType: CopyFile.Flags.NoFollowDst
+  fullName: CopyFile.Flags.NoFollowDst
+- uid: Darwin.CopyFile.Flags.NoFollowSrc
+  parent: Darwin.CopyFile.Flags
+  isExternal: false
+  name: NoFollowSrc
+  nameWithType: CopyFile.Flags.NoFollowSrc
+  fullName: CopyFile.Flags.NoFollowSrc
+- uid: Darwin.CopyFile.Flags.Pack
+  parent: Darwin.CopyFile.Flags
+  isExternal: false
+  name: Pack
+  nameWithType: CopyFile.Flags.Pack
+  fullName: CopyFile.Flags.Pack
+- uid: Darwin.CopyFile.Flags.Recursive
+  parent: Darwin.CopyFile.Flags
+  isExternal: false
+  name: Recursive
+  nameWithType: CopyFile.Flags.Recursive
+  fullName: CopyFile.Flags.Recursive
+- uid: Darwin.CopyFile.Flags.RunInPlace
+  parent: Darwin.CopyFile.Flags
+  isExternal: false
+  name: RunInPlace
+  nameWithType: CopyFile.Flags.RunInPlace
+  fullName: CopyFile.Flags.RunInPlace
+- uid: Darwin.CopyFile.Flags.Security
+  parent: Darwin.CopyFile.Flags
+  isExternal: false
+  name: Security
+  nameWithType: CopyFile.Flags.Security
+  fullName: CopyFile.Flags.Security
+- uid: Darwin.CopyFile.Flags.Stat
+  parent: Darwin.CopyFile.Flags
+  isExternal: false
+  name: Stat
+  nameWithType: CopyFile.Flags.Stat
+  fullName: CopyFile.Flags.Stat
+- uid: Darwin.CopyFile.Flags.Unlink
+  parent: Darwin.CopyFile.Flags
+  isExternal: false
+  name: Unlink
+  nameWithType: CopyFile.Flags.Unlink
+  fullName: CopyFile.Flags.Unlink
+- uid: Darwin.CopyFile.Flags.UnPack
+  parent: Darwin.CopyFile.Flags
+  isExternal: false
+  name: UnPack
+  nameWithType: CopyFile.Flags.UnPack
+  fullName: CopyFile.Flags.UnPack
+- uid: Darwin.CopyFile.Flags.Verbose
+  parent: Darwin.CopyFile.Flags
+  isExternal: false
+  name: Verbose
+  nameWithType: CopyFile.Flags.Verbose
+  fullName: CopyFile.Flags.Verbose
+- uid: Darwin.CopyFile.Flags.Xattr
+  parent: Darwin.CopyFile.Flags
+  isExternal: false
+  name: Xattr
+  nameWithType: CopyFile.Flags.Xattr
+  fullName: CopyFile.Flags.Xattr

@@ -1,0 +1,110 @@
+### YamlMime:ManagedReference
+items:
+- uid: Darwin.CopyFile.NextStep
+  id: CopyFile.NextStep
+  children:
+  - Darwin.CopyFile.NextStep.Continue
+  - Darwin.CopyFile.NextStep.Quit
+  - Darwin.CopyFile.NextStep.Skip
+  langs:
+  - csharp
+  name: CopyFile.NextStep
+  nameWithType: CopyFile.NextStep
+  fullName: Darwin.CopyFile.NextStep
+  type: Enum
+  assemblies:
+  - CopyFile
+  namespace: Darwin
+  summary: Possible return values from the State callback method.
+  syntax:
+    content: public enum CopyFile.NextStep
+  inheritance:
+  - System.Enum
+- uid: Darwin.CopyFile.NextStep.Continue
+  id: Continue
+  parent: Darwin.CopyFile.NextStep
+  langs:
+  - csharp
+  name: Continue
+  nameWithType: CopyFile.NextStep.Continue
+  fullName: CopyFile.NextStep.Continue
+  type: Field
+  assemblies:
+  - CopyFile
+  namespace: Darwin
+  summary: Continue copying
+  syntax:
+    content: Continue
+    return:
+      type: Darwin.CopyFile+NextStep
+      description: To be added.
+  exceptions: []
+- uid: Darwin.CopyFile.NextStep.Quit
+  id: Quit
+  parent: Darwin.CopyFile.NextStep
+  langs:
+  - csharp
+  name: Quit
+  nameWithType: CopyFile.NextStep.Quit
+  fullName: CopyFile.NextStep.Quit
+  type: Field
+  assemblies:
+  - CopyFile
+  namespace: Darwin
+  summary: Stop copying
+  syntax:
+    content: Quit
+    return:
+      type: Darwin.CopyFile+NextStep
+      description: To be added.
+  exceptions: []
+- uid: Darwin.CopyFile.NextStep.Skip
+  id: Skip
+  parent: Darwin.CopyFile.NextStep
+  langs:
+  - csharp
+  name: Skip
+  nameWithType: CopyFile.NextStep.Skip
+  fullName: CopyFile.NextStep.Skip
+  type: Field
+  assemblies:
+  - CopyFile
+  namespace: Darwin
+  summary: Skip this file
+  syntax:
+    content: Skip
+    return:
+      type: Darwin.CopyFile+NextStep
+      description: To be added.
+  exceptions: []
+references:
+- uid: System.Enum
+  parent: System
+  isExternal: true
+  name: Enum
+  nameWithType: Enum
+  fullName: System.Enum
+- uid: Darwin.CopyFile.NextStep.Continue
+  parent: Darwin.CopyFile.NextStep
+  isExternal: false
+  name: Continue
+  nameWithType: CopyFile.NextStep.Continue
+  fullName: CopyFile.NextStep.Continue
+- uid: Darwin.CopyFile
+  parent: Darwin
+  isExternal: false
+  name: CopyFile
+  nameWithType: CopyFile
+  fullName: Darwin.CopyFile+NextStep
+- uid: Darwin.CopyFile.NextStep.Quit
+  parent: Darwin.CopyFile.NextStep
+  isExternal: false
+  name: Quit
+  nameWithType: CopyFile.NextStep.Quit
+  fullName: CopyFile.NextStep.Quit
+- uid: Darwin.CopyFile.NextStep.Skip
+  parent: Darwin.CopyFile.NextStep
+  isExternal: false
+  name: Skip
+  nameWithType: CopyFile.NextStep.Skip
+  fullName: CopyFile.NextStep.Skip

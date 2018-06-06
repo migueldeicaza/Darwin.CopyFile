@@ -1,0 +1,136 @@
+### YamlMime:ManagedReference
+items:
+- uid: Darwin.CopyFile.Stage
+  id: CopyFile.Stage
+  children:
+  - Darwin.CopyFile.Stage.Error
+  - Darwin.CopyFile.Stage.Finish
+  - Darwin.CopyFile.Stage.Progress
+  - Darwin.CopyFile.Stage.Start
+  langs:
+  - csharp
+  name: CopyFile.Stage
+  nameWithType: CopyFile.Stage
+  fullName: Darwin.CopyFile.Stage
+  type: Enum
+  assemblies:
+  - CopyFile
+  namespace: Darwin
+  summary: Represents the state of the operation being reported to the callback
+  syntax:
+    content: public enum CopyFile.Stage
+  inheritance:
+  - System.Enum
+- uid: Darwin.CopyFile.Stage.Error
+  id: Error
+  parent: Darwin.CopyFile.Stage
+  langs:
+  - csharp
+  name: Error
+  nameWithType: CopyFile.Stage.Error
+  fullName: CopyFile.Stage.Error
+  type: Field
+  assemblies:
+  - CopyFile
+  namespace: Darwin
+  summary: There was an error during the copy operation.
+  syntax:
+    content: Error
+    return:
+      type: Darwin.CopyFile+Stage
+      description: To be added.
+  exceptions: []
+- uid: Darwin.CopyFile.Stage.Finish
+  id: Finish
+  parent: Darwin.CopyFile.Stage
+  langs:
+  - csharp
+  name: Finish
+  nameWithType: CopyFile.Stage.Finish
+  fullName: CopyFile.Stage.Finish
+  type: Field
+  assemblies:
+  - CopyFile
+  namespace: Darwin
+  summary: The copy operation is finishing.
+  syntax:
+    content: Finish
+    return:
+      type: Darwin.CopyFile+Stage
+      description: To be added.
+  exceptions: []
+- uid: Darwin.CopyFile.Stage.Progress
+  id: Progress
+  parent: Darwin.CopyFile.Stage
+  langs:
+  - csharp
+  name: Progress
+  nameWithType: CopyFile.Stage.Progress
+  fullName: CopyFile.Stage.Progress
+  type: Field
+  assemblies:
+  - CopyFile
+  namespace: Darwin
+  summary: The copy operation is progressing.
+  syntax:
+    content: Progress
+    return:
+      type: Darwin.CopyFile+Stage
+      description: To be added.
+  exceptions: []
+- uid: Darwin.CopyFile.Stage.Start
+  id: Start
+  parent: Darwin.CopyFile.Stage
+  langs:
+  - csharp
+  name: Start
+  nameWithType: CopyFile.Stage.Start
+  fullName: CopyFile.Stage.Start
+  type: Field
+  assemblies:
+  - CopyFile
+  namespace: Darwin
+  summary: The copy operation is starting
+  syntax:
+    content: Start
+    return:
+      type: Darwin.CopyFile+Stage
+      description: To be added.
+  exceptions: []
+references:
+- uid: System.Enum
+  parent: System
+  isExternal: true
+  name: Enum
+  nameWithType: Enum
+  fullName: System.Enum
+- uid: Darwin.CopyFile.Stage.Error
+  parent: Darwin.CopyFile.Stage
+  isExternal: false
+  name: Error
+  nameWithType: CopyFile.Stage.Error
+  fullName: CopyFile.Stage.Error
+- uid: Darwin.CopyFile
+  parent: Darwin
+  isExternal: false
+  name: CopyFile
+  nameWithType: CopyFile
+  fullName: Darwin.CopyFile+Stage
+- uid: Darwin.CopyFile.Stage.Finish
+  parent: Darwin.CopyFile.Stage
+  isExternal: false
+  name: Finish
+  nameWithType: CopyFile.Stage.Finish
+  fullName: CopyFile.Stage.Finish
+- uid: Darwin.CopyFile.Stage.Progress
+  parent: Darwin.CopyFile.Stage
+  isExternal: false
+  name: Progress
+  nameWithType: CopyFile.Stage.Progress
+  fullName: CopyFile.Stage.Progress
+- uid: Darwin.CopyFile.Stage.Start
+  parent: Darwin.CopyFile.Stage
+  isExternal: false
+  name: Start
+  nameWithType: CopyFile.Stage.Start
+  fullName: CopyFile.Stage.Start

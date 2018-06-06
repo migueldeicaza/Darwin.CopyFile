@@ -1,0 +1,20 @@
+### YamlMime:TableOfContent
+- uid: Darwin
+  name: Darwin
+  items:
+  - uid: Darwin.CopyFile
+    name: CopyFile
+  - uid: Darwin.CopyFile.Flags
+    name: CopyFile.Flags
+  - uid: Darwin.CopyFile.NextStep
+    name: CopyFile.NextStep
+  - uid: Darwin.CopyFile.Progress
+    name: CopyFile.Progress
+  - uid: Darwin.CopyFile.Stage
+    name: CopyFile.Stage
+  - uid: Darwin.CopyFile.State
+    name: CopyFile.State
+  - uid: Darwin.CopyFile.State.ProgressCallback
+    name: CopyFile.State.ProgressCallback
+  - uid: Darwin.CopyFile.Status
+    name: CopyFile.Status

@@ -1,0 +1,136 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Darwin.CopyFile </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Darwin.CopyFile ">
+    <meta name="generator" content="docfx 2.18.2.0">
+    
+    <link rel="shortcut icon" href="favicon.ico">
+    <link rel="stylesheet" href="styles/docfx.vendor.css">
+    <link rel="stylesheet" href="styles/docfx.css">
+    <link rel="stylesheet" href="styles/main.css">
+    <meta property="docfx:navrel" content="toc.html">
+    <meta property="docfx:tocrel" content="toc.html">
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="index.html">
+                <img id="logo" class="svg" src="logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+        <div class="article row grid">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="">
+<h1 id="darwincopyfile">Darwin.CopyFile</h1>
+
+<p>A binding to the Darwin OS <code>copyfile</code> API.</p>
+<p>The Darwin <code>copyfile</code> API can copy files, their metadata, extended
+attributes, recursive directory and supports fast copies using
+cloning (for files hosted on APFS on macOS and iOS).</p>
+<h1 id="using-the-api">Using the API</h1>
+<p>The main API is:</p>
+<pre><code class="lang-csharp">public class CopyFile {
+    static Status Copy (string from, string to, Flags flags, State state = null);
+}
+</code></pre><p>Generally, you will configure the operatiob by passing the desired
+flags to Copy which controls whether to perform nested copied, whether
+to use cloning, copy attributes and so on.</p>
+<h2 id="examples">Examples</h2>
+<p>Copy a file:</p>
+<pre><code class="lang-csharp">CopyFile.Copy (&quot;/etc/hosts&quot;, &quot;/tmp/hostscopy&quot;, CopyFile.Flags.All);
+</code></pre><p>Copy a file, using cloning:</p>
+<pre><code class="lang-csharp">CopyFile.Copy (&quot;/etc/hosts&quot;, &quot;/tmp/hosts&quot;, CopyFile.Flags.All | CopyFile.Flags.Clone);
+</code></pre><p>Copy a file, using clone, two times:</p>
+<pre><code class="lang-csharp">CopyFile.Copy (&quot;/etc/hosts&quot;, &quot;/tmp/hosts2&quot;, CopyFile.Flags.All | CopyFile.Flags.Clone);
+
+// This fails, becaue Clone refuses to override the file if the target exists:
+CopyFile.Copy (&quot;/etc/hosts&quot;, &quot;/tmp/hosts2&quot;, CopyFile.Flags.All | CopyFile.Flags.Clone);
+
+// Tell Copy to unlink (remove) the target if it is present:
+CopyFile.Copy (&quot;/etc/hosts&quot;, &quot;/tmp/hosts2&quot;, CopyFile.Flags.All | CopyFile.Flags.Clone | CopyFile.Flags.Unlink);
+</code></pre><p>Copy a file, only if the target does not exist (returns EEXIST) error if this is the case:</p>
+<pre><code>CopyFile.Copy (&quot;/etc/hosts&quot;, &quot;/tmp/hosts&quot;, CopyFile.Flags.All | CopyFile.Flags.Excl)  
+</code></pre><p>Recursively copy a directory, using clone:</p>
+<pre><code class="lang-csharp">CopyFile.Copy (&quot;/Users/miguel/Desktop&quot;, &quot;/tmp/CopyDesktop&quot;, CopyFile.Flags.All |  CopyFile.Flags.Clone | CopyFile.Flags.Recursive);
+</code></pre><h1 id="controling-recursive-copies">Controling Recursive Copies</h1>
+<p>The <code>State</code> object is used to control how recursive copies are
+performed, you create a state object and you can further customize how
+the copy works by providing a callback to it and accessing the State
+object from the callback.</p>
+</article>
+          </div>
+          
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/migueldeicaza/Darwin.CopyFile/blob/master/docfx/index.md/#L1" class="contribution-link">Improve this Doc</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+              <!-- <p><a class="back-to-top" href="#top">Back to top</a><p> -->
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            
+            <span>Copyright © 2015-2017 Microsoft<br>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="styles/docfx.js"></script>
+    <script type="text/javascript" src="styles/main.js"></script>
+  </body>
+</html>

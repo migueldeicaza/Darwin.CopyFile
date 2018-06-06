@@ -1,0 +1,198 @@
+### YamlMime:ManagedReference
+items:
+- uid: Darwin.CopyFile.Progress
+  id: CopyFile.Progress
+  children:
+  - Darwin.CopyFile.Progress.CopyData
+  - Darwin.CopyFile.Progress.CopyXattr
+  - Darwin.CopyFile.Progress.Directory
+  - Darwin.CopyFile.Progress.DirectoryCleanup
+  - Darwin.CopyFile.Progress.Error
+  - Darwin.CopyFile.Progress.File
+  langs:
+  - csharp
+  name: CopyFile.Progress
+  nameWithType: CopyFile.Progress
+  fullName: Darwin.CopyFile.Progress
+  type: Enum
+  assemblies:
+  - CopyFile
+  namespace: Darwin
+  summary: Provides the progress of a recursive copy operation
+  syntax:
+    content: public enum CopyFile.Progress
+  inheritance:
+  - System.Enum
+- uid: Darwin.CopyFile.Progress.CopyData
+  id: CopyData
+  parent: Darwin.CopyFile.Progress
+  langs:
+  - csharp
+  name: CopyData
+  nameWithType: CopyFile.Progress.CopyData
+  fullName: CopyFile.Progress.CopyData
+  type: Field
+  assemblies:
+  - CopyFile
+  namespace: Darwin
+  summary: >-
+    Invoked on every write call.   The second argument will either be Stage.Progress, or Stage.Error.
+                The amount of data copied so far can be retrieved from the State.Copied property.
+  syntax:
+    content: CopyData
+    return:
+      type: Darwin.CopyFile+Progress
+      description: To be added.
+  exceptions: []
+- uid: Darwin.CopyFile.Progress.CopyXattr
+  id: CopyXattr
+  parent: Darwin.CopyFile.Progress
+  langs:
+  - csharp
+  name: CopyXattr
+  nameWithType: CopyFile.Progress.CopyXattr
+  fullName: CopyFile.Progress.CopyXattr
+  type: Field
+  assemblies:
+  - CopyFile
+  namespace: Darwin
+  summary: >-
+    Invoked when copying is copying extended attributes.  The name of the extended attribute being
+                copied will be on the State.XattrName property.  Any attribute skipped by returning Skip from the
+                Start callback will not be placed into the  packed output file.
+  syntax:
+    content: CopyXattr
+    return:
+      type: Darwin.CopyFile+Progress
+      description: To be added.
+  exceptions: []
+- uid: Darwin.CopyFile.Progress.Directory
+  id: Directory
+  parent: Darwin.CopyFile.Progress
+  langs:
+  - csharp
+  name: Directory
+  nameWithType: CopyFile.Progress.Directory
+  fullName: CopyFile.Progress.Directory
+  type: Field
+  assemblies:
+  - CopyFile
+  namespace: Darwin
+  summary: >-
+    The object being copied is a directory, and is being entered.  (That is, none of the filesystem
+                objects contained within the directory have been copied yet.)
+  syntax:
+    content: Directory
+    return:
+      type: Darwin.CopyFile+Progress
+      description: To be added.
+  exceptions: []
+- uid: Darwin.CopyFile.Progress.DirectoryCleanup
+  id: DirectoryCleanup
+  parent: Darwin.CopyFile.Progress
+  langs:
+  - csharp
+  name: DirectoryCleanup
+  nameWithType: CopyFile.Progress.DirectoryCleanup
+  fullName: CopyFile.Progress.DirectoryCleanup
+  type: Field
+  assemblies:
+  - CopyFile
+  namespace: Darwin
+  summary: >-
+    The object being copied is a directory, and all of the objects contained have been copied.  At
+                this stage, the destination directory being copied will have any extra permissions that were
+                added to allow the copying will be removed.
+  syntax:
+    content: DirectoryCleanup
+    return:
+      type: Darwin.CopyFile+Progress
+      description: To be added.
+  exceptions: []
+- uid: Darwin.CopyFile.Progress.Error
+  id: Error
+  parent: Darwin.CopyFile.Progress
+  langs:
+  - csharp
+  name: Error
+  nameWithType: CopyFile.Progress.Error
+  fullName: CopyFile.Progress.Error
+  type: Field
+  assemblies:
+  - CopyFile
+  namespace: Darwin
+  summary: "There was an error in processing an element of the source hierarchy; this happens when fts(3)\n            returns an error or unknown file type.  (Currently, the second argument to the call-back \n            function will always be Progress.Error in this case.)"
+  syntax:
+    content: Error
+    return:
+      type: Darwin.CopyFile+Progress
+      description: To be added.
+  exceptions: []
+- uid: Darwin.CopyFile.Progress.File
+  id: File
+  parent: Darwin.CopyFile.Progress
+  langs:
+  - csharp
+  name: File
+  nameWithType: CopyFile.Progress.File
+  fullName: CopyFile.Progress.File
+  type: Field
+  assemblies:
+  - CopyFile
+  namespace: Darwin
+  summary: The object being copied is a file (or, rather, something other than a directory).
+  syntax:
+    content: File
+    return:
+      type: Darwin.CopyFile+Progress
+      description: To be added.
+  exceptions: []
+references:
+- uid: System.Enum
+  parent: System
+  isExternal: true
+  name: Enum
+  nameWithType: Enum
+  fullName: System.Enum
+- uid: Darwin.CopyFile.Progress.CopyData
+  parent: Darwin.CopyFile.Progress
+  isExternal: false
+  name: CopyData
+  nameWithType: CopyFile.Progress.CopyData
+  fullName: CopyFile.Progress.CopyData
+- uid: Darwin.CopyFile
+  parent: Darwin
+  isExternal: false
+  name: CopyFile
+  nameWithType: CopyFile
+  fullName: Darwin.CopyFile+Progress
+- uid: Darwin.CopyFile.Progress.CopyXattr
+  parent: Darwin.CopyFile.Progress
+  isExternal: false
+  name: CopyXattr
+  nameWithType: CopyFile.Progress.CopyXattr
+  fullName: CopyFile.Progress.CopyXattr
+- uid: Darwin.CopyFile.Progress.Directory
+  parent: Darwin.CopyFile.Progress
+  isExternal: false
+  name: Directory
+  nameWithType: CopyFile.Progress.Directory
+  fullName: CopyFile.Progress.Directory
+- uid: Darwin.CopyFile.Progress.DirectoryCleanup
+  parent: Darwin.CopyFile.Progress
+  isExternal: false
+  name: DirectoryCleanup
+  nameWithType: CopyFile.Progress.DirectoryCleanup
+  fullName: CopyFile.Progress.DirectoryCleanup
+- uid: Darwin.CopyFile.Progress.Error
+  parent: Darwin.CopyFile.Progress
+  isExternal: false
+  name: Error
+  nameWithType: CopyFile.Progress.Error
+  fullName: CopyFile.Progress.Error
+- uid: Darwin.CopyFile.Progress.File
+  parent: Darwin.CopyFile.Progress
+  isExternal: false
+  name: File
+  nameWithType: CopyFile.Progress.File
+  fullName: CopyFile.Progress.File

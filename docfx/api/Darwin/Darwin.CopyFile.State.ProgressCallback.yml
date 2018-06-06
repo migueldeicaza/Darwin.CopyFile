@@ -1,0 +1,32 @@
+### YamlMime:ManagedReference
+items:
+- uid: Darwin.CopyFile.State.ProgressCallback
+  id: CopyFile.State.ProgressCallback
+  langs:
+  - csharp
+  name: CopyFile.State.ProgressCallback
+  nameWithType: CopyFile.State.ProgressCallback
+  fullName: Darwin.CopyFile.State.ProgressCallback
+  type: Delegate
+  assemblies:
+  - CopyFile
+  namespace: Darwin
+  summary: Signature for the method that will be invoked during a recursive copy operation.
+  remarks: >-
+    The fist parameter identifies the kind of progress being reported,
+                  the second parameter the state of that particular process, then
+                  the source and destiation file names as well as the State object that can
+                  be used to inspect the state of the operation.   The method must return
+                  an action in the form of a NextStep value to indicate what course of
+                  action to take (continue, skip, cancel).
+  syntax:
+    content: public delegate Darwin.CopyFile.NextStep CopyFile.State.ProgressCallback(CopyFile.Progress what, CopyFile.Stage stage, string source, string dest, CopyFile.State state);
+  inheritance:
+  - System.Delegate
+references:
+- uid: System.Delegate
+  parent: System
+  isExternal: true
+  name: Delegate
+  nameWithType: Delegate
+  fullName: System.Delegate
