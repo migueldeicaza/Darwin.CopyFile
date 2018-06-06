@@ -1,0 +1,40 @@
+<Type Name="CopyFile+State+ProgressCallback" FullName="Darwin.CopyFile+State+ProgressCallback">
+  <TypeSignature Language="C#" Value="public delegate Darwin.CopyFile.NextStep CopyFile.State.ProgressCallback(CopyFile.Progress what, CopyFile.Stage stage, string source, string dest, CopyFile.State state);" />
+  <TypeSignature Language="ILAsm" Value=".class nested public auto ansi sealed CopyFile/State/ProgressCallback extends System.MulticastDelegate" />
+  <AssemblyInfo>
+    <AssemblyName>CopyFile</AssemblyName>
+    <AssemblyVersion>1.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Delegate</BaseTypeName>
+  </Base>
+  <Parameters>
+    <Parameter Name="what" Type="Darwin.CopyFile+Progress" />
+    <Parameter Name="stage" Type="Darwin.CopyFile+Stage" />
+    <Parameter Name="source" Type="System.String" />
+    <Parameter Name="dest" Type="System.String" />
+    <Parameter Name="state" Type="Darwin.CopyFile+State" />
+  </Parameters>
+  <ReturnValue>
+    <ReturnType>Darwin.CopyFile+NextStep</ReturnType>
+  </ReturnValue>
+  <Docs>
+    <param name="what">To be added.</param>
+    <param name="stage">To be added.</param>
+    <param name="source">To be added.</param>
+    <param name="dest">To be added.</param>
+    <param name="state">To be added.</param>
+    <summary>
+              Signature for the method that will be invoked during a recursive copy operation.
+            </summary>
+    <returns>To be added.</returns>
+    <remarks>
+              The fist parameter identifies the kind of progress being reported,
+              the second parameter the state of that particular process, then
+              the source and destiation file names as well as the State object that can
+              be used to inspect the state of the operation.   The method must return
+              an action in the form of a NextStep value to indicate what course of
+              action to take (continue, skip, cancel).
+            </remarks>
+  </Docs>
+</Type>

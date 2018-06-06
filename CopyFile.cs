@@ -41,10 +41,10 @@ namespace Darwin {
 	/// </summary>
 	public class CopyFile {
 		
-		[Flags]
 		/// <summary>
 		///   Flags that control how the CopyFile APIs operate
 		/// </summary>
+		[Flags]
 		public enum Flags {
 			/// <summary>
 			/// Copy the source file's access control lists.
@@ -153,7 +153,7 @@ namespace Darwin {
 			/// </summary>
 			DataSparse = 1 << 27,
 			/// <summary>
-			///
+			/// Verbose copy
 			/// </summary>
 			Verbose = 1 << 30,
 		}
@@ -191,15 +191,30 @@ namespace Darwin {
 			/// <summary>
 			/// Invoked when copying is copying extended attributes.  The name of the extended attribute being
 			/// copied will be on the State.XattrName property.  Any attribute skipped by returning Skip from the
-			// Start callback will not be placed into the  packed output file.
+			/// Start callback will not be placed into the  packed output file.
 			/// </summary>
 			CopyXattr = 5,
 		}
 
+		/// <summary>
+		///   Represents the state of the operation being reported to the callback
+		/// </summary>
 		public enum Stage {
+			/// <summary>
+			/// The copy operation is starting
+			/// </summary>
 			Start = 1,
+			/// <summary>
+			/// The copy operation is finishing.
+			/// </summary>
 			Finish = 2,
+			/// <summary>
+			/// There was an error during the copy operation.
+			/// </summary>
 			Error = 3,
+			/// <summary>
+			/// The copy operation is progressing.
+			/// </summary>
 			Progress = 4
 		}
 
@@ -222,16 +237,16 @@ namespace Darwin {
 		}
 	
 		[DllImport ("libc")]
-		public extern static copy_file_state_t copyfile_state_alloc ();
+		extern static copy_file_state_t copyfile_state_alloc ();
 		
 		[DllImport ("libc", SetLastError=true)]
-		public extern static int copyfile_state_free (copy_file_state_t buf);
+		extern static int copyfile_state_free (copy_file_state_t buf);
 
 		[DllImport ("libc")]
-		public extern static int fcopyfile (int fromfd, int tofd, copy_file_state_t state, Flags flags);
+		extern static int fcopyfile (int fromfd, int tofd, copy_file_state_t state, Flags flags);
 
 		[DllImport ("libc", SetLastError=true)]
-		public extern static int copyfile (string from, string to, copy_file_state_t state, Flags flags);
+		extern static int copyfile (string from, string to, copy_file_state_t state, Flags flags);
 
 		/// <summary>
 		///   State that can be used to call CopyFile, you can use this to configure some properties of the
@@ -243,6 +258,9 @@ namespace Darwin {
 		public class State : IDisposable {
 			internal IntPtr handle;
 
+			/// <summary>
+			///  Creates a new state object used to control the recursive copying operation
+			/// </summary>
 			public State()
 			{
 				handle = copyfile_state_alloc ();
@@ -254,11 +272,17 @@ namespace Darwin {
 				GC.SuppressFinalize (this);
 			}
 
+			/// <summary>
+			///  Finalizer 
+			/// </summary>
 			~State ()
 			{
 				Dispose (false);
 			}
 
+			/// <summary>
+			///  Disposes the object
+			/// </summary>
 			protected virtual void Dispose (bool disposing)
 			{
 				if (handle != IntPtr.Zero){
@@ -393,6 +417,17 @@ namespace Darwin {
 				}
 			}
 
+			/// <summary>
+			///   Signature for the method that will be invoked during a recursive copy operation.
+			/// </summary>
+			/// <remarks>
+			///   The fist parameter identifies the kind of progress being reported,
+			///   the second parameter the state of that particular process, then
+			///   the source and destiation file names as well as the State object that can
+			///   be used to inspect the state of the operation.   The method must return
+			///   an action in the form of a NextStep value to indicate what course of
+			///   action to take (continue, skip, cancel).
+			/// </remarks>
 			public delegate NextStep ProgressCallback (Progress what, Stage stage, string source, string dest, State state);
 			
 			static NextStep Callback (int what, int stage, IntPtr state, IntPtr src, IntPtr dst, IntPtr ctx)
@@ -425,13 +460,42 @@ namespace Darwin {
 		///   Possible return values from perfoming the copy operation
 		/// </summary>
 		public enum Status {
+			/// <summary>
+			/// The operation was successful.
+			/// </summary>
 			Ok = 0,
+			/// <summary>
+			/// An invalid flag was passed to Copy for recursive copies, or a parameter is invalid 
+			/// </summary>
 			EINVAL = 22,
+			/// <summary>
+			/// Memory allocation failed
+			/// </summary>
 			ENOTMEM = 12,
+			/// <summary>
+			/// The source file was not a directory, symbolic link, or regular file,
+			/// Flags.CloneForce was specified and file cloning is not supported or
+			/// Flags.DataSparse was specified, sparse copying is not supported, and Flags.Data
+			/// was not specified.
+			/// </summary>
 			ENOTSUP = 45,
+			/// <summary>
+			/// The copy was cancelled by callback.
+			/// </summary>
 			ECANCELED = 89,
+			/// <summary>
+			/// The destination parameter to Copy already existed and was passed in with Flags.Excl
+			/// </summary>
 			EEXISTS = 17,
+			/// <summary>
+			/// The source parameter to Copy does not exist.
+			/// </summary>
 			ENOENT = 2,
+			/// <summary>
+			/// Search permission is denied for a component of the path prefix
+			/// for the source or destination parameters; or write permission is
+			/// denied for a component of the path prefix for the to parameter.
+			/// </summary>
 			EACCESS = 13
 		}
 
@@ -440,18 +504,23 @@ namespace Darwin {
 		/// </summary>
 		/// <remarks>
 		///   <para>
-		///     The 
-		///   </para>
-		///   <para>
-		///   </para>
-		///   <para>
 		///     The copy operation can be configured using the flags parameter.
+		///   </para>
+		///   <para>
+		///     Use Flags.All to copy all the content, metadata and extended attributes.   
+		///   </para>
+		///   <para>
+		///     Use Flags.Recursive to perform a recursive copy.
+		///   </para>
+		///   <para>
+		///     Use Flags.Clone for using the clone fast copy mechanism available on APFS,
+		///     it automatically fallsback to simple copies.
 		///   </para>
 		///   <para>
 		///     To get control over the copy operation during recursive copies, you can provide a State object.
 		///   </para>
 		/// </remarks>
-		public static Status Run(string from, string to, Flags flags, State state = null)
+		public static Status Copy(string from, string to, Flags flags, State state = null)
 		{
 			if (from == null)
 				throw new ArgumentNullException (nameof (from));

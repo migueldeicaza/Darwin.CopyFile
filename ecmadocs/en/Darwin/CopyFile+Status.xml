@@ -1,0 +1,152 @@
+<Type Name="CopyFile+Status" FullName="Darwin.CopyFile+Status">
+  <TypeSignature Language="C#" Value="public enum CopyFile.Status" />
+  <TypeSignature Language="ILAsm" Value=".class nested public auto ansi sealed CopyFile/Status extends System.Enum" />
+  <AssemblyInfo>
+    <AssemblyName>CopyFile</AssemblyName>
+    <AssemblyVersion>1.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Enum</BaseTypeName>
+  </Base>
+  <Docs>
+    <summary>
+              Possible return values from perfoming the copy operation
+            </summary>
+    <remarks>To be added.</remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="EACCESS">
+      <MemberSignature Language="C#" Value="EACCESS" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype Darwin.CopyFile/Status EACCESS = int32(13)" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyVersion>1.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>Darwin.CopyFile+Status</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>
+            Search permission is denied for a component of the path prefix
+            for the source or destination parameters; or write permission is
+            denied for a component of the path prefix for the to parameter.
+            </summary>
+      </Docs>
+    </Member>
+    <Member MemberName="ECANCELED">
+      <MemberSignature Language="C#" Value="ECANCELED" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype Darwin.CopyFile/Status ECANCELED = int32(89)" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyVersion>1.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>Darwin.CopyFile+Status</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>
+            The copy was cancelled by callback.
+            </summary>
+      </Docs>
+    </Member>
+    <Member MemberName="EEXISTS">
+      <MemberSignature Language="C#" Value="EEXISTS" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype Darwin.CopyFile/Status EEXISTS = int32(17)" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyVersion>1.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>Darwin.CopyFile+Status</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>
+            The destination parameter to Copy already existed and was passed in with Flags.Excl
+            </summary>
+      </Docs>
+    </Member>
+    <Member MemberName="EINVAL">
+      <MemberSignature Language="C#" Value="EINVAL" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype Darwin.CopyFile/Status EINVAL = int32(22)" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyVersion>1.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>Darwin.CopyFile+Status</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>
+            An invalid flag was passed to Copy for recursive copies, or a parameter is invalid 
+            </summary>
+      </Docs>
+    </Member>
+    <Member MemberName="ENOENT">
+      <MemberSignature Language="C#" Value="ENOENT" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype Darwin.CopyFile/Status ENOENT = int32(2)" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyVersion>1.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>Darwin.CopyFile+Status</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>
+            The source parameter to Copy does not exist.
+            </summary>
+      </Docs>
+    </Member>
+    <Member MemberName="ENOTMEM">
+      <MemberSignature Language="C#" Value="ENOTMEM" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype Darwin.CopyFile/Status ENOTMEM = int32(12)" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyVersion>1.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>Darwin.CopyFile+Status</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>
+            Memory allocation failed
+            </summary>
+      </Docs>
+    </Member>
+    <Member MemberName="ENOTSUP">
+      <MemberSignature Language="C#" Value="ENOTSUP" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype Darwin.CopyFile/Status ENOTSUP = int32(45)" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyVersion>1.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>Darwin.CopyFile+Status</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>
+            The source file was not a directory, symbolic link, or regular file,
+            Flags.CloneForce was specified and file cloning is not supported or
+            Flags.DataSparse was specified, sparse copying is not supported, and Flags.Data
+            was not specified.
+            </summary>
+      </Docs>
+    </Member>
+    <Member MemberName="Ok">
+      <MemberSignature Language="C#" Value="Ok" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype Darwin.CopyFile/Status Ok = int32(0)" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyVersion>1.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>Darwin.CopyFile+Status</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>
+            The operation was successful.
+            </summary>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

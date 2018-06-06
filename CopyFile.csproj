@@ -6,8 +6,9 @@
     <Authors>Miguel de Icaza</Authors>
     <Company>Miguel de Icaza</Company>
     <Title>Darwin.CopyFile provides a managed API to access macOS, tvOS and iOS's copyfile APIs</Title>
-    <Copyright>Miguel de Icaza, MIT Licesed</Copyright> 
+    <Copyright>Miguel de Icaza, MIT Licesed</Copyright>
+    <RepositoryUrl>https://github.com/migueldeicaza/Darwin.CopyFile</RepositoryUrl> 
     <TargetFramework>netstandard1.5</TargetFramework>
+    <DocumentationFile>bin\Debug\netstandard1.5\CopyFile.xml</DocumentationFile>
   </PropertyGroup>
-
 </Project>

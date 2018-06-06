@@ -1,0 +1,396 @@
+<Type Name="CopyFile+Flags" FullName="Darwin.CopyFile+Flags">
+  <TypeSignature Language="C#" Value="public enum CopyFile.Flags" />
+  <TypeSignature Language="ILAsm" Value=".class nested public auto ansi sealed CopyFile/Flags extends System.Enum" />
+  <AssemblyInfo>
+    <AssemblyName>CopyFile</AssemblyName>
+    <AssemblyVersion>1.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Enum</BaseTypeName>
+  </Base>
+  <Attributes>
+    <Attribute>
+      <AttributeName>System.Flags</AttributeName>
+    </Attribute>
+  </Attributes>
+  <Docs>
+    <summary>
+              Flags that control how the CopyFile APIs operate
+            </summary>
+    <remarks>To be added.</remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="Acl">
+      <MemberSignature Language="C#" Value="Acl" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype Darwin.CopyFile/Flags Acl = int32(1)" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyVersion>1.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>Darwin.CopyFile+Flags</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>
+            Copy the source file's access control lists.
+            </summary>
+      </Docs>
+    </Member>
+    <Member MemberName="All">
+      <MemberSignature Language="C#" Value="All" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype Darwin.CopyFile/Flags All = int32(15)" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyVersion>1.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>Darwin.CopyFile+Flags</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>
+            Copy the entire file; equivalent to Metadata | All
+            </summary>
+      </Docs>
+    </Member>
+    <Member MemberName="Check">
+      <MemberSignature Language="C#" Value="Check" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype Darwin.CopyFile/Flags Check = int32(65536)" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyVersion>1.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>Darwin.CopyFile+Flags</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>
+            Return a bitmask, corresponding to the Flags indicating which contents would be copied; no
+            data are actually copied.  (E.g., if flags was set to Check|Metadata, and the from
+            file had extended attributes but no ACLs, the return value would be Xattr)
+            </summary>
+      </Docs>
+    </Member>
+    <Member MemberName="Clone">
+      <MemberSignature Language="C#" Value="Clone" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype Darwin.CopyFile/Flags Clone = int32(16777216)" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyVersion>1.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>Darwin.CopyFile+Flags</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>
+             Try to clone the file instead.  This is a best try flag i.e. if cloning fails, fallback to copying the
+             file.  This flag is equivalent to Excl | Acl | Stat | Xattr | Data | NoFollowSrc
+             Note that if cloning is successful, progress callbacks will
+             not be invoked.  Note also that there is no support for cloning directories: if a directory is pro-
+             vided as the source and CloneForce is not passed, this will instead copy the directory.
+             Recursive copying however is supported, see below for more information.  (Only CopyFile).
+            </summary>
+      </Docs>
+    </Member>
+    <Member MemberName="CloneForce">
+      <MemberSignature Language="C#" Value="CloneForce" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype Darwin.CopyFile/Flags CloneForce = int32(33554432)" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyVersion>1.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>Darwin.CopyFile+Flags</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>
+            Clone the file instead.  This is a force flag i.e. if cloning fails, an error is returned.  This flag
+            is equivalent to Excl | Acl | Stat | Xattr | Data | NoFollowSrc
+            Note that if cloning is successful, progress callbacks will not be invoked.
+            Note also that there is no support for cloning directories: if a directory is provided as the source,
+            an error will be returned.  (Only CopyFile).
+            </summary>
+      </Docs>
+    </Member>
+    <Member MemberName="Data">
+      <MemberSignature Language="C#" Value="Data" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype Darwin.CopyFile/Flags Data = int32(8)" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyVersion>1.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>Darwin.CopyFile+Flags</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>
+            Copy the source file's data.
+            </summary>
+      </Docs>
+    </Member>
+    <Member MemberName="DataSparse">
+      <MemberSignature Language="C#" Value="DataSparse" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype Darwin.CopyFile/Flags DataSparse = int32(134217728)" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyVersion>1.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>Darwin.CopyFile+Flags</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>
+            Copy a file sparsely.  This requires that the source and destination file systems support sparse files
+            with hole sizes at least as large as their block sizes.  This also requires that the source file is
+            sparse, and for fcopyfile() the source file descriptor's offset be a multiple of the minimum hole
+            size.  If Data is also specified, this will fall back to a full copy if sparse copying cannot
+            be performed for any reason; otherwise, an error is returned.
+            </summary>
+      </Docs>
+    </Member>
+    <Member MemberName="Excl">
+      <MemberSignature Language="C#" Value="Excl" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype Darwin.CopyFile/Flags Excl = int32(131072)" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyVersion>1.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>Darwin.CopyFile+Flags</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>
+            Fail if the to file already exists. 
+            </summary>
+      </Docs>
+    </Member>
+    <Member MemberName="Metadata">
+      <MemberSignature Language="C#" Value="Metadata" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype Darwin.CopyFile/Flags Metadata = int32(7)" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyVersion>1.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>Darwin.CopyFile+Flags</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>
+            Copy the metadata; equivalent to Security | Xattr
+            </summary>
+      </Docs>
+    </Member>
+    <Member MemberName="Move">
+      <MemberSignature Language="C#" Value="Move" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype Darwin.CopyFile/Flags Move = int32(1048576)" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyVersion>1.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>Darwin.CopyFile+Flags</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>
+            Unlink (using remove(3)) the from file.  (Only CopyFile)  No
+            error is returned if remove(3) fails.  Note that remove(3) removes a symbolic link itself, not the
+            target of the link.
+            </summary>
+      </Docs>
+    </Member>
+    <Member MemberName="NoFollow">
+      <MemberSignature Language="C#" Value="NoFollow" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype Darwin.CopyFile/Flags NoFollow = int32(524289)" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyVersion>1.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>Darwin.CopyFile+Flags</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>
+            Equivalent to NoFollowDst and NoFollowSrc
+            </summary>
+      </Docs>
+    </Member>
+    <Member MemberName="NoFollowDst">
+      <MemberSignature Language="C#" Value="NoFollowDst" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype Darwin.CopyFile/Flags NoFollowDst = int32(524288)" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyVersion>1.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>Darwin.CopyFile+Flags</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>
+            Do not follow the to file, if it is a symbolic link (only CopyFile)
+            </summary>
+      </Docs>
+    </Member>
+    <Member MemberName="NoFollowSrc">
+      <MemberSignature Language="C#" Value="NoFollowSrc" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype Darwin.CopyFile/Flags NoFollowSrc = int32(262144)" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyVersion>1.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>Darwin.CopyFile+Flags</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>
+            Do not follow the from file, if it is a symbolic link (only CopyFile).
+            </summary>
+      </Docs>
+    </Member>
+    <Member MemberName="Pack">
+      <MemberSignature Language="C#" Value="Pack" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype Darwin.CopyFile/Flags Pack = int32(4194304)" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyVersion>1.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>Darwin.CopyFile+Flags</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>
+            Serialize the from file.  The to file is an AppleDouble-format file.
+            </summary>
+      </Docs>
+    </Member>
+    <Member MemberName="Recursive">
+      <MemberSignature Language="C#" Value="Recursive" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype Darwin.CopyFile/Flags Recursive = int32(32768)" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyVersion>1.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>Darwin.CopyFile+Flags</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>
+            Causes CopyFile  to recursively copy a hierarchy.  It is not used by FCopyFile.
+            </summary>
+      </Docs>
+    </Member>
+    <Member MemberName="RunInPlace">
+      <MemberSignature Language="C#" Value="RunInPlace" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype Darwin.CopyFile/Flags RunInPlace = int32(67108864)" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyVersion>1.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>Darwin.CopyFile+Flags</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>
+            If the src file has quarantine information, add the QTN_FLAG_DO_NOT_TRANSLOCATE flag to the quarantine
+            information of the dst file. This allows a bundle to run in place instead of being translocated.
+            </summary>
+      </Docs>
+    </Member>
+    <Member MemberName="Security">
+      <MemberSignature Language="C#" Value="Security" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype Darwin.CopyFile/Flags Security = int32(3)" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyVersion>1.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>Darwin.CopyFile+Flags</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>
+            Copy the source file's POSIX and ACL information; equivalent to Stat | Acl
+            </summary>
+      </Docs>
+    </Member>
+    <Member MemberName="Stat">
+      <MemberSignature Language="C#" Value="Stat" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype Darwin.CopyFile/Flags Stat = int32(2)" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyVersion>1.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>Darwin.CopyFile+Flags</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>
+            Copy the source file's POSIX information (mode, modification time, etc.).
+            </summary>
+      </Docs>
+    </Member>
+    <Member MemberName="Unlink">
+      <MemberSignature Language="C#" Value="Unlink" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype Darwin.CopyFile/Flags Unlink = int32(2097152)" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyVersion>1.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>Darwin.CopyFile+Flags</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>
+             Unlink the to file before starting.  (Only CopyFile).
+            </summary>
+      </Docs>
+    </Member>
+    <Member MemberName="UnPack">
+      <MemberSignature Language="C#" Value="UnPack" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype Darwin.CopyFile/Flags UnPack = int32(8388608)" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyVersion>1.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>Darwin.CopyFile+Flags</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>
+            Unserialize the from file.  The from file is an AppleDouble-format file; the to file will have the
+             extended attributes, ACLs, resource fork, and FinderInfo data from the to file, regardless of the
+             flags argument passed in.
+             </summary>
+      </Docs>
+    </Member>
+    <Member MemberName="Verbose">
+      <MemberSignature Language="C#" Value="Verbose" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype Darwin.CopyFile/Flags Verbose = int32(1073741824)" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyVersion>1.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>Darwin.CopyFile+Flags</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>
+            Verbose copy
+            </summary>
+      </Docs>
+    </Member>
+    <Member MemberName="Xattr">
+      <MemberSignature Language="C#" Value="Xattr" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype Darwin.CopyFile/Flags Xattr = int32(4)" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyVersion>1.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>Darwin.CopyFile+Flags</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>
+            Copy the source file's extended attributes.
+            </summary>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

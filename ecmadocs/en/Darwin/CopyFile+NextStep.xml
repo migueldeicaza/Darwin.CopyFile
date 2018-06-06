@@ -1,0 +1,67 @@
+<Type Name="CopyFile+NextStep" FullName="Darwin.CopyFile+NextStep">
+  <TypeSignature Language="C#" Value="public enum CopyFile.NextStep" />
+  <TypeSignature Language="ILAsm" Value=".class nested public auto ansi sealed CopyFile/NextStep extends System.Enum" />
+  <AssemblyInfo>
+    <AssemblyName>CopyFile</AssemblyName>
+    <AssemblyVersion>1.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Enum</BaseTypeName>
+  </Base>
+  <Docs>
+    <summary>
+            Possible return values from the State callback method.
+            </summary>
+    <remarks>To be added.</remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="Continue">
+      <MemberSignature Language="C#" Value="Continue" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype Darwin.CopyFile/NextStep Continue = int32(0)" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyVersion>1.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>Darwin.CopyFile+NextStep</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>
+            Continue copying
+            </summary>
+      </Docs>
+    </Member>
+    <Member MemberName="Quit">
+      <MemberSignature Language="C#" Value="Quit" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype Darwin.CopyFile/NextStep Quit = int32(2)" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyVersion>1.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>Darwin.CopyFile+NextStep</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>
+            Stop copying
+            </summary>
+      </Docs>
+    </Member>
+    <Member MemberName="Skip">
+      <MemberSignature Language="C#" Value="Skip" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype Darwin.CopyFile/NextStep Skip = int32(1)" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyVersion>1.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>Darwin.CopyFile+NextStep</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>
+            Skip this file
+            </summary>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

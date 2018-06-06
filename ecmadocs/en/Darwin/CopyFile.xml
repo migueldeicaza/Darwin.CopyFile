@@ -1,0 +1,79 @@
+<Type Name="CopyFile" FullName="Darwin.CopyFile">
+  <TypeSignature Language="C#" Value="public class CopyFile" />
+  <TypeSignature Language="ILAsm" Value=".class public auto ansi beforefieldinit CopyFile extends System.Object" />
+  <AssemblyInfo>
+    <AssemblyName>CopyFile</AssemblyName>
+    <AssemblyVersion>1.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Object</BaseTypeName>
+  </Base>
+  <Interfaces />
+  <Docs>
+    <summary>
+            Surfaces the Darwin CopyFile API which can both copy individual files
+            as well as copying directory structures.
+            </summary>
+    <remarks>To be added.</remarks>
+  </Docs>
+  <Members>
+    <Member MemberName=".ctor">
+      <MemberSignature Language="C#" Value="public CopyFile ();" />
+      <MemberSignature Language="ILAsm" Value=".method public hidebysig specialname rtspecialname instance void .ctor() cil managed" />
+      <MemberType>Constructor</MemberType>
+      <AssemblyInfo>
+        <AssemblyVersion>1.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <Parameters />
+      <Docs>
+        <summary>To be added.</summary>
+        <remarks>To be added.</remarks>
+      </Docs>
+    </Member>
+    <Member MemberName="Copy">
+      <MemberSignature Language="C#" Value="public static Darwin.CopyFile.Status Copy (string from, string to, Darwin.CopyFile.Flags flags, Darwin.CopyFile.State state = null);" />
+      <MemberSignature Language="ILAsm" Value=".method public static hidebysig valuetype Darwin.CopyFile/Status Copy(string from, string to, valuetype Darwin.CopyFile/Flags flags, class Darwin.CopyFile/State state) cil managed" />
+      <MemberType>Method</MemberType>
+      <AssemblyInfo>
+        <AssemblyVersion>1.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>Darwin.CopyFile+Status</ReturnType>
+      </ReturnValue>
+      <Parameters>
+        <Parameter Name="from" Type="System.String" />
+        <Parameter Name="to" Type="System.String" />
+        <Parameter Name="flags" Type="Darwin.CopyFile+Flags" />
+        <Parameter Name="state" Type="Darwin.CopyFile+State" />
+      </Parameters>
+      <Docs>
+        <param name="from">To be added.</param>
+        <param name="to">To be added.</param>
+        <param name="flags">To be added.</param>
+        <param name="state">To be added.</param>
+        <summary>
+            This function copies a file or directory to a destination.
+            </summary>
+        <returns>To be added.</returns>
+        <remarks>
+          <para>
+                The copy operation can be configured using the flags parameter.
+              </para>
+          <para>
+                Use Flags.All to copy all the content, metadata and extended attributes.   
+              </para>
+          <para>
+                Use Flags.Recursive to perform a recursive copy.
+              </para>
+          <para>
+                Use Flags.Clone for using the clone fast copy mechanism available on APFS,
+                it automatically fallsback to simple copies.
+              </para>
+          <para>
+                To get control over the copy operation during recursive copies, you can provide a State object.
+              </para>
+        </remarks>
+      </Docs>
+    </Member>
+  </Members>
+</Type>

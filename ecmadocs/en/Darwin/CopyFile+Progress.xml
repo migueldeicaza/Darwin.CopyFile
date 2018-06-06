@@ -1,0 +1,123 @@
+<Type Name="CopyFile+Progress" FullName="Darwin.CopyFile+Progress">
+  <TypeSignature Language="C#" Value="public enum CopyFile.Progress" />
+  <TypeSignature Language="ILAsm" Value=".class nested public auto ansi sealed CopyFile/Progress extends System.Enum" />
+  <AssemblyInfo>
+    <AssemblyName>CopyFile</AssemblyName>
+    <AssemblyVersion>1.0.0.0</AssemblyVersion>
+  </AssemblyInfo>
+  <Base>
+    <BaseTypeName>System.Enum</BaseTypeName>
+  </Base>
+  <Docs>
+    <summary>
+             Provides the progress of a recursive copy operation
+            </summary>
+    <remarks>To be added.</remarks>
+  </Docs>
+  <Members>
+    <Member MemberName="CopyData">
+      <MemberSignature Language="C#" Value="CopyData" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype Darwin.CopyFile/Progress CopyData = int32(4)" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyVersion>1.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>Darwin.CopyFile+Progress</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>
+            Invoked on every write call.   The second argument will either be Stage.Progress, or Stage.Error.
+            The amount of data copied so far can be retrieved from the State.Copied property.
+            </summary>
+      </Docs>
+    </Member>
+    <Member MemberName="CopyXattr">
+      <MemberSignature Language="C#" Value="CopyXattr" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype Darwin.CopyFile/Progress CopyXattr = int32(5)" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyVersion>1.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>Darwin.CopyFile+Progress</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>
+            Invoked when copying is copying extended attributes.  The name of the extended attribute being
+            copied will be on the State.XattrName property.  Any attribute skipped by returning Skip from the
+            Start callback will not be placed into the  packed output file.
+            </summary>
+      </Docs>
+    </Member>
+    <Member MemberName="Directory">
+      <MemberSignature Language="C#" Value="Directory" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype Darwin.CopyFile/Progress Directory = int32(2)" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyVersion>1.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>Darwin.CopyFile+Progress</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>
+            The object being copied is a directory, and is being entered.  (That is, none of the filesystem
+            objects contained within the directory have been copied yet.)
+            </summary>
+      </Docs>
+    </Member>
+    <Member MemberName="DirectoryCleanup">
+      <MemberSignature Language="C#" Value="DirectoryCleanup" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype Darwin.CopyFile/Progress DirectoryCleanup = int32(3)" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyVersion>1.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>Darwin.CopyFile+Progress</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>
+            The object being copied is a directory, and all of the objects contained have been copied.  At
+            this stage, the destination directory being copied will have any extra permissions that were
+            added to allow the copying will be removed.
+            </summary>
+      </Docs>
+    </Member>
+    <Member MemberName="Error">
+      <MemberSignature Language="C#" Value="Error" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype Darwin.CopyFile/Progress Error = int32(0)" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyVersion>1.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>Darwin.CopyFile+Progress</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>
+            There was an error in processing an element of the source hierarchy; this happens when fts(3)
+            returns an error or unknown file type.  (Currently, the second argument to the call-back 
+            function will always be Progress.Error in this case.)
+            </summary>
+      </Docs>
+    </Member>
+    <Member MemberName="File">
+      <MemberSignature Language="C#" Value="File" />
+      <MemberSignature Language="ILAsm" Value=".field public static literal valuetype Darwin.CopyFile/Progress File = int32(1)" />
+      <MemberType>Field</MemberType>
+      <AssemblyInfo>
+        <AssemblyVersion>1.0.0.0</AssemblyVersion>
+      </AssemblyInfo>
+      <ReturnValue>
+        <ReturnType>Darwin.CopyFile+Progress</ReturnType>
+      </ReturnValue>
+      <Docs>
+        <summary>
+            The object being copied is a file (or, rather, something other than a directory).
+            </summary>
+      </Docs>
+    </Member>
+  </Members>
+</Type>
